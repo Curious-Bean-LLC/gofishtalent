@@ -1,0 +1,228 @@
+/* Fish Pond Styles */
+.fish-pond {
+  position: relative;
+  width: 100%;
+  min-height: 600px;
+  background: linear-gradient(180deg, #1e3a5f 0%, #2a5a8a 50%, #1a4d7a 100%);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Water ripple effect */
+.fish-pond::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 60%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  animation: ripple 8s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.6; }
+}
+
+/* Bubbles */
+.bubble {
+  position: absolute;
+  bottom: -50px;
+  width: 20px;
+  height: 20px;
+  background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2));
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float-up 6s infinite ease-in;
+}
+
+.bubble:nth-child(1) { left: 10%; animation-delay: 0s; }
+.bubble:nth-child(2) { left: 25%; animation-delay: 2s; width: 15px; height: 15px; }
+.bubble:nth-child(3) { left: 40%; animation-delay: 4s; }
+.bubble:nth-child(4) { left: 60%; animation-delay: 1s; width: 25px; height: 25px; }
+.bubble:nth-child(5) { left: 75%; animation-delay: 3s; }
+.bubble:nth-child(6) { left: 90%; animation-delay: 5s; width: 18px; height: 18px; }
+
+@keyframes float-up {
+  0% {
+    bottom: -50px;
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.6;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    bottom: 100%;
+    opacity: 0;
+  }
+}
+
+/* Fish container */
+.fish {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.fish:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+/* Fish 1 - Swimming right */
+.fish-1 {
+  top: 15%;
+  left: 0;
+  animation: swim-right 20s linear infinite;
+}
+
+/* Fish 2 - Swimming left */
+.fish-2 {
+  top: 40%;
+  right: 0;
+  animation: swim-left 25s linear infinite;
+  transform: scaleX(-1);
+}
+
+/* Fish 3 - Swimming right */
+.fish-3 {
+  top: 65%;
+  left: 0;
+  animation: swim-right 22s linear infinite;
+  animation-delay: -10s;
+}
+
+@keyframes swim-right {
+  0% {
+    left: -200px;
+  }
+  100% {
+    left: calc(100% + 200px);
+  }
+}
+
+@keyframes swim-left {
+  0% {
+    right: -200px;
+  }
+  100% {
+    right: calc(100% + 200px);
+  }
+}
+
+/* Fish SVG styling */
+.fish-body {
+  fill: #ff6b6b;
+  filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.fish-fin {
+  fill: #ff8787;
+}
+
+.fish-eye {
+  fill: #fff !important;
+  stroke: #000;
+  stroke-width: 1;
+}
+
+.fish-pupil {
+  fill: #000 !important;
+}
+
+/* Ensure SVG elements render properly */
+.fish svg {
+  display: block;
+  position: relative;
+  z-index: 1;
+}
+
+/* Band image on fish head */
+.fish-band-image {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+  pointer-events: none;
+}
+
+.fish-1 .fish-band-image {
+  left: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.fish-2 .fish-band-image {
+  right: 75px;
+  top: 50%;
+  transform: translateY(-50%) scaleX(-1);
+}
+
+.fish-3 .fish-band-image {
+  left: 75px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Seaweed decoration */
+.seaweed {
+  position: absolute;
+  bottom: 0;
+  width: 30px;
+  height: 150px;
+  background: linear-gradient(to top, #2d5016 0%, #3a6b1f 100%);
+  border-radius: 50% 50% 0 0;
+  animation: sway 4s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.seaweed:nth-child(7) { left: 10%; }
+.seaweed:nth-child(8) { left: 30%; animation-delay: -1s; }
+.seaweed:nth-child(9) { left: 50%; animation-delay: -2s; height: 120px; }
+.seaweed:nth-child(10) { left: 70%; animation-delay: -3s; }
+.seaweed:nth-child(11) { right: 10%; animation-delay: -1.5s; height: 180px; }
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(-5deg);
+  }
+  50% {
+    transform: rotate(5deg);
+  }
+}
+
+/* Band info tooltip */
+.fish-tooltip {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 20;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.fish:hover .fish-tooltip {
+  opacity: 1;
+}

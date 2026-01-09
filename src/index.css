@@ -1,4 +1,108 @@
-@import "tailwindcss";
+@import 'tailwindcss';
+
+/* Custom Font Imports */
+@font-face {
+  font-family: 'Bangers';
+  src: url('/assets/fonts/Bangers/Bangers-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fascinate Inline';
+  src: url('/assets/fonts/Fascinate_Inline/FascinateInline-Regular.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fruktur';
+  src: url('/assets/fonts/Fruktur/Fruktur-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Fruktur';
+  src: url('/assets/fonts/Fruktur/Fruktur-Italic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Gochi Hand';
+  src: url('/assets/fonts/Gochi_Hand/GochiHand-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Miniver';
+  src: url('/assets/fonts/Miniver/Miniver-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Rock Salt';
+  src: url('/assets/fonts/Rock_Salt/RockSalt-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Slackey';
+  src: url('/assets/fonts/Slackey/Slackey-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PT_Sans_Caption';
+  src: url('/assets/fonts/PT_Sans_Caption/PTSansCaption-Regular.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+.font-bangers {
+  font-family: 'Bangers', sans-serif;
+}
+
+.font-fascinate-inline {
+  font-family: 'Fascinate Inline', sans-serif;
+}
+
+.font-fruktur {
+  font-family: 'Fruktur', sans-serif;
+  font-style: normal;
+}
+
+.font-fruktur-italic {
+  font-family: 'Fruktur', sans-serif;
+  font-style: italic;
+}
+
+.font-gochi-hand {
+  font-family: 'Gochi Hand', sans-serif;
+}
+
+.font-miniver {
+  font-family: 'Miniver', sans-serif;
+}
+
+.font-rock-salt {
+  font-family: 'Rock Salt', cursive;
+}
+
+.font-slackey {
+  font-family: 'Slackey', sans-serif;
+}
+
+.font-pt-sans-caption {
+  font-family: 'PT_Sans_Caption', sans-serif;
+}
 
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -19,5 +123,24 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+  font-family: 'PT_Sans_Caption', sans-serif;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Slackey', serif;
+}
+
+.external-link {
+  text-decoration: underline;
+  text-decoration-style: wavy;
+  color: orange;
+}
+
+.songkick-widget {
+  
+}
