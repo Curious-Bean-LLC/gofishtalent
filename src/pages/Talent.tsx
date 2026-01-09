@@ -1,8 +1,11 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
 import { FaFish } from 'react-icons/fa6'
 import { musicians } from '../constants/musicians'
 
 const Talent: React.FC = () => {
+  const navigate = useNavigate()
+
   return (
     <div className='flex flex-col gap-6 max-w-7xl mx-auto px-8 py-12 text-center min-h-[calc(100vh-5rem)]'>
       <h1 className='text-5xl md:text-4xl sm:text-3xl font-bold mb-6 text-white'>
@@ -17,7 +20,8 @@ const Talent: React.FC = () => {
         {musicians.map((musician) => (
           <div
             key={musician.id}
-            className='bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-orange-500/50 border-r-4 border-b-4 border-gray-200 aspect-[2/3] flex flex-col relative'
+            onClick={() => navigate(musician.route)}
+            className='bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-orange-500/50 border-r-4 border-b-4 border-gray-200 aspect-[2/3] flex flex-col relative cursor-pointer'
           >
             {/* Card Body - Band Picture */}
             <div className='flex-1 flex flex-col gap-6 items-center justify-center p-6'>
