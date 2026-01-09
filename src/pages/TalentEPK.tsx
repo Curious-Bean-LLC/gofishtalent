@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {
   FaArrowLeft,
   FaBandcamp,
@@ -17,6 +17,31 @@ const TalentEPK: React.FC = () => {
 
   // Find the musician based on the route
   const musician = musicians.find((m) => m.route === `/talent/${slug}`)
+
+  // Reinitialize Songkick widget when artist changes
+  useEffect(() => {
+    if (musician?.songkickArtistId && musician.songkickArtistId !== 'YOUR_SONGKICK_ARTIST_ID') {
+      // Remove existing Songkick script
+      const existingScript = document.querySelector('script[src*="widget-app.songkick.com"]')
+      if (existingScript) {
+        existingScript.remove()
+      }
+
+      // Load new Songkick script for this artist
+      const script = document.createElement('script')
+      script.src = `//widget-app.songkick.com/injector/${musician.songkickArtistId}`
+      script.async = true
+      document.body.appendChild(script)
+
+      // Cleanup function
+      return () => {
+        const scriptToRemove = document.querySelector(`script[src*="${musician.songkickArtistId}"]`)
+        if (scriptToRemove) {
+          scriptToRemove.remove()
+        }
+      }
+    }
+  }, [musician?.songkickArtistId])
 
   if (!musician) {
     return (
