@@ -26,7 +26,7 @@ const Navbar = () => {
             alt='GoFishTalent Logo'
             className='h-10 inline-block mr-2'
           />
-          <h1 className='font-slackey'>Go Fish!</h1>
+          <h1 className='font-slackey'>Go Fish! Talent</h1>
         </Link>
 
         {/* Hamburger Menu Icon - Only visible on mobile */}
