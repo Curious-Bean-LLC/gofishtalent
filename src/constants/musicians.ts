@@ -12,7 +12,7 @@ export const musicians = [
     genre: 'Psychedelic Art-Pop',
     color: '#ff6b6b',
     image: FACover,
-    fontClass: 'font-fruktur',
+    fontClass: 'font-gochi-hand',
     route: '/talent/fairy-astronaut',
     bio: 'Fairy Astronaut is a Psychedelic Artpop Duo in Milwaukee, Wisconsin. Fronted by Brady Wayne- multi instrumentalist, producer, and McKenzie Van Oss- vocalist, multi instrumentalist, and former professional ballet dancer, stars collide to blast you off into a new dimension. The twink glam pair are originally from Green Bay, Wisconsin, and met in the Spring of 2024, where immediately a supernova was born. Quickly moving to Milwaukee later that fall, they began to shake things up leaving audiences with questions such as, “What is going on here?” and “Is this Performance Art? A Synth Wizard Battle? A Dance Party?” But what you really should be asking is, “Are we Human, or are we Fairy Astronaut?” and the answer is always, “Who Cares.”',
     location: 'Milwaukee, WI',
@@ -58,6 +58,15 @@ export const musicians = [
         youtubeUrl: 'https://youtu.be/a9iZ8bDKt3o',
       },
     ],
+    pressCoverage: [
+      {
+        title:
+          'Radio Milwaukee `Milwaukee Music Friday`: Fairy Astronaut - LVL 5',
+        url: 'https://radiomilwaukee.org/local-music/2025-10-16/new-milwaukee-music-fairy-astronaut-lvl-5',
+        quote:
+          '[McKenzie] Van Oss and bandmate Brady Wayne settle into a kinetic groove that’ll be perfect for bouncing around at their next live show.',
+      },
+    ],
   },
   {
     id: 2,
@@ -96,7 +105,7 @@ export const musicians = [
       },
     ],
     socialLinks: {
-      spotify: 'https://spotify.com',
+      // spotify: 'https://spotify.com',
       instagram: 'https://instagram.com/adriennexash',
       website: 'https://bio.site/adriennexash',
       bandcamp: 'https://adriennexash.bandcamp.com',
@@ -109,6 +118,13 @@ export const musicians = [
         title: 'Live Performance',
         youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Replace with actual video
       },
+    ],
+    pressCoverage: [
+      // {
+      //   title: 'Press Feature',
+      //   url: 'https://example.com/article',
+      //   quote: 'Twin vocal powerhouses with an unmistakable chemistry.',
+      // },
     ],
   },
   {
@@ -161,6 +177,18 @@ export const musicians = [
       {
         title: '01/20/2024 Frets and Friends (Green Bay, WI)',
         youtubeUrl: 'https://www.youtube.com/watch?v=Ar5Bq9wpk2s', // Replace with actual video
+      },
+    ],
+    pressCoverage: [
+      {
+        title: "Modern Haunting on Code Zero Radio's Fox Cities Core",
+        url: 'https://www.youtube.com/watch?v=3FtlTtQy7x0',
+      },
+      {
+        title:
+          "There's a Modern Haunting in Green Bay - ION Indie Music Magazine",
+        url: 'https://domandoma.in/doman-documents/modern-haunting',
+        quote: 'The soul of an 80’s vampire',
       },
     ],
   },

@@ -133,6 +133,37 @@ const TalentEPK: React.FC = () => {
             </ul>
           </div>
 
+          {/* Press Coverage Section */}
+          {musician.pressCoverage && musician.pressCoverage.length > 0 && (
+            <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
+              <h2 className='text-3xl font-bold text-white mb-4'>
+                Press Coverage
+              </h2>
+              <div className='space-y-4'>
+                {musician.pressCoverage.map((press, index) => (
+                  <div
+                    key={index}
+                    className='bg-gray-700/30 rounded-lg p-5 border border-gray-600 hover:border-indigo-500 transition-colors'
+                  >
+                    <a
+                      href={press.url}
+                      target='_blank'
+                      rel='noopener noreferrer'
+                      className='text-xl font-semibold text-indigo-400 hover:text-indigo-300 transition-colors block mb-2'
+                    >
+                      {press.title} →
+                    </a>
+                    {press.quote && (
+                      <blockquote className='text-gray-300 italic border-l-4 border-indigo-500 pl-4 mt-3'>
+                        "{press.quote}"
+                      </blockquote>
+                    )}
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
           {/* Influences Section */}
           <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
             <h2 className='text-3xl font-bold text-white mb-4'>Influences</h2>
