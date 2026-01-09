@@ -20,9 +20,14 @@ const TalentEPK: React.FC = () => {
 
   // Reinitialize Songkick widget when artist changes
   useEffect(() => {
-    if (musician?.songkickArtistId && musician.songkickArtistId !== 'YOUR_SONGKICK_ARTIST_ID') {
+    if (
+      musician?.songkickArtistId &&
+      musician.songkickArtistId !== 'YOUR_SONGKICK_ARTIST_ID'
+    ) {
       // Remove existing Songkick script
-      const existingScript = document.querySelector('script[src*="widget-app.songkick.com"]')
+      const existingScript = document.querySelector(
+        'script[src*="widget-app.songkick.com"]'
+      )
       if (existingScript) {
         existingScript.remove()
       }
@@ -35,7 +40,9 @@ const TalentEPK: React.FC = () => {
 
       // Cleanup function
       return () => {
-        const scriptToRemove = document.querySelector(`script[src*="${musician.songkickArtistId}"]`)
+        const scriptToRemove = document.querySelector(
+          `script[src*="${musician.songkickArtistId}"]`
+        )
         if (scriptToRemove) {
           scriptToRemove.remove()
         }
@@ -140,12 +147,41 @@ const TalentEPK: React.FC = () => {
               ))}
             </div>
           </div>
+
+          {/* Available Sets Section */}
+          {musician.sets && musician.sets.length > 0 && (
+            <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
+              <h2 className='text-3xl font-bold text-white mb-4'>
+                Available Sets
+              </h2>
+              <div className='space-y-4'>
+                {musician.sets.map((set, index) => (
+                  <div
+                    key={index}
+                    className='bg-gray-700/30 rounded-lg p-5 border border-gray-600'
+                  >
+                    <div className='flex items-start justify-between gap-4 mb-2'>
+                      <h3 className='text-xl font-bold text-white'>
+                        {set.name}
+                      </h3>
+                      <span className='text-indigo-400 font-semibold whitespace-nowrap'>
+                        {set.duration}
+                      </span>
+                    </div>
+                    <p className='text-gray-300 leading-relaxed'>
+                      {set.description}
+                    </p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Sidebar */}
         <div className='space-y-6'>
           {/* Social Links */}
-          <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700 sticky top-24'>
+          <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
             <h2 className='text-2xl font-bold text-white mb-4'>Connect</h2>
             <div className='space-y-3'>
               <a
@@ -215,27 +251,29 @@ const TalentEPK: React.FC = () => {
             </div>
           </div>
           {/* Songkick Widget */}
-          <a
-            href={`https://www.songkick.com/artists/${musician.songkickArtistId}`}
-            className='songkick-widget'
-            data-theme='dark'
-            data-track-button='on'
-            data-detect-style='off'
-            data-background-color='rgb(0,0,0,1)'
-            data-font-color='rgb(255,255,255,1)'
-            data-button-bg-color='rgb(255,255,255,1)'
-            data-button-text-color='rgb(0,0,0,1)'
-            data-locale='en'
-            data-other-artists='on'
-            data-share-button='on'
-            data-country-filter='on'
-            data-rsvp='on'
-            data-request-show='on'
-            data-past-events='off'
-            data-past-events-offtour='off'
-            data-remind-me='off'
-            // style='display: none;'
-          ></a>
+          <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
+            <a
+              href={`https://www.songkick.com/artists/${musician.songkickArtistId}`}
+              className='songkick-widget'
+              data-theme='dark'
+              data-track-button='on'
+              data-detect-style='off'
+              data-background-color='rgb(0,0,0,1)'
+              data-font-color='rgb(255,255,255,1)'
+              data-button-bg-color='rgb(255,255,255,1)'
+              data-button-text-color='rgb(0,0,0,1)'
+              data-locale='en'
+              data-other-artists='on'
+              data-share-button='on'
+              data-country-filter='on'
+              data-rsvp='on'
+              data-request-show='on'
+              data-past-events='off'
+              data-past-events-offtour='off'
+              data-remind-me='off'
+              // style='display: none;'
+            ></a>
+          </div>
         </div>
       </div>
     </div>

@@ -20,6 +20,20 @@ export const musicians = [
     highlights: [
       'Hosted a holiday special with over 50 attendees and moving $1k in ticket sales',
     ],
+    sets: [
+      {
+        name: 'Originals Duo Set',
+        duration: '30-60 minutes',
+        description:
+          'High-energy performance of original psychedelic art-pop songs featuring live synths, vocals, and dance performance',
+      },
+      {
+        name: 'Covers Duo Set',
+        duration: '30-180 minutes',
+        description:
+          'Unique reimaginings of popular songs across genres with our signature psychedelic twist',
+      },
+    ],
     socialLinks: {
       spotify:
         'https://open.spotify.com/artist/2o2CoR0mS78JbibKCr4q4q?si=DaHX28j-T6OudOHYQkCe4Q',
@@ -42,9 +56,30 @@ export const musicians = [
     route: '/talent/adriennexash',
     bio: 'Adrienne & Ash are identical twins, slaying the stage and serving looks ever since they can remember. They have an unsurprising natural talent to create smooth sounds together, whether they’re performing covers or delivering original tunes. Transcending genres, they spread their wings around pop, alternative, & soulful music with their uniquely ethereal, edgy, & maximalist vibe that can only ring in as authentically themselves.',
     location: 'Milwaukee, WI',
-    influences: ['Alicia Keys', 'H.E.R.', 'SZA', 'Erykah Badu', 'Hozier', 'Frank Ocean'],
+    influences: [
+      'Alicia Keys',
+      'H.E.R.',
+      'SZA',
+      'Erykah Badu',
+      'Hozier',
+      'Frank Ocean',
+    ],
     highlights: [
       'Invited to perform at the Cactus Club (Milwaukee, WI) on more than one occasion',
+    ],
+    sets: [
+      {
+        name: 'Originals Duo Set',
+        duration: '20-30 min',
+        description:
+          'Ethereal vocal harmonies and original songs blending pop, alternative, and soul',
+      },
+      {
+        name: 'Covers Duo Set',
+        duration: '30-45 min',
+        description:
+          'Stunning vocal arrangements of contemporary and classic hits spanning multiple genres',
+      },
     ],
     socialLinks: {
       spotify: 'https://spotify.com',
@@ -68,8 +103,25 @@ export const musicians = [
     bio: 'Modern Haunting is a Paranormal Dance Rock band in Green Bay, Wisconsin. Fronted by Charlie Devillers, the project kicked off in 2022 after returning from his stint studying music in Nashville. Modern Haunting leads with driving synths, dance rock instrumentals, and vocals that follow the haunted vibe - sometimes like a classic 80s thriller, other times lyrically capturing the haunt of reality. Performances build on the recorded tracks fitting the energy of any room, making each set unique. The community Modern Haunting brings is passionate about a good bit, good music, and a new release every Friday the 13th.',
     location: 'Green Bay, WI',
     influences: ['The Killers', 'CHVRCHES', 'Depeche Mode', 'New Order'],
-    highlights: [
-      '3x BAMMY Award Winner',
+    highlights: ['3x BAMMY Award Winner'],
+    sets: [
+      {
+        name: 'Originals - Solo',
+        duration: '30-60 min',
+        description:
+          'High-energy paranormal dance rock with driving synths and haunting vocals',
+      },
+      {
+        name: 'Originals - Duo',
+        duration: '30-60 min',
+        description: "It's like a solo set, but with a guitarist!",
+      },
+      {
+        name: 'Originals - 4-piece Band',
+        duration: '30-60 min',
+        description:
+          'The full Modern Haunting experience with bass, drums, guitar, synths, and vocals',
+      },
     ],
     socialLinks: {
       spotify:
