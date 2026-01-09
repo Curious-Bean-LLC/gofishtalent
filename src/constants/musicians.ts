@@ -44,6 +44,20 @@ export const musicians = [
       youtube: 'https://youtube.com/@fairyastronaut',
     },
     songkickArtistId: '10384508',
+    performances: [
+      {
+        title: 'Big Fish Bowl LIVE at Cactus Club (Milwaukee, WI)',
+        youtubeUrl: 'https://youtu.be/ZePMJCnMH5g',
+      },
+      {
+        title: 'Suburbia LIVE EP Release Show July 2025 (Milwaukee, WI)',
+        youtubeUrl: 'https://youtu.be/h_miVJPdovE',
+      },
+      {
+        title: 'Yes Woman LIVE EP Release Show July 2025 (Milwaukee, WI)',
+        youtubeUrl: 'https://youtu.be/a9iZ8bDKt3o',
+      },
+    ],
   },
   {
     id: 2,
@@ -90,6 +104,12 @@ export const musicians = [
       youtube: 'https://youtube.com/@adriennexash',
     },
     songkickArtistId: 'YOUR_SONGKICK_ARTIST_ID', // Replace with actual Songkick artist ID
+    performances: [
+      {
+        title: 'Live Performance',
+        youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Replace with actual video
+      },
+    ],
   },
   {
     id: 3,
@@ -133,5 +153,15 @@ export const musicians = [
       youtube: 'https://youtube.com/@modernhaunting',
     },
     songkickArtistId: '10312224', // Replace with actual Songkick artist ID
+    performances: [
+      {
+        title: '09/13/2024 All Bands on Deck (Green Bay, WI)',
+        youtubeUrl: 'https://www.youtube.com/watch?v=MkP08K1AECk', // Replace with actual video
+      },
+      {
+        title: '01/20/2024 Frets and Friends (Green Bay, WI)',
+        youtubeUrl: 'https://www.youtube.com/watch?v=Ar5Bq9wpk2s', // Replace with actual video
+      },
+    ],
   },
 ]

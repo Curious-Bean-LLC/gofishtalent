@@ -176,6 +176,42 @@ const TalentEPK: React.FC = () => {
               </div>
             </div>
           )}
+
+          {/* Performances Section */}
+          {musician.performances && musician.performances.length > 0 && (
+            <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
+              <h2 className='text-3xl font-bold text-white mb-4'>
+                Performances
+              </h2>
+              <div className='space-y-6'>
+                {musician.performances.map((performance, index) => {
+                  // Convert YouTube URL to embed URL
+                  const getEmbedUrl = (url: string) => {
+                    const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/)?.[1]
+                    return videoId ? `https://www.youtube.com/embed/${videoId}` : url
+                  }
+
+                  return (
+                    <div key={index} className='space-y-2'>
+                      <h3 className={`${musician.fontClass} text-xl font-semibold text-white`}>
+                        {performance.title}
+                      </h3>
+                      <div className='relative w-full pt-[56.25%] bg-gray-900 rounded-lg overflow-hidden'>
+                        <iframe
+                          className='absolute top-0 left-0 w-full h-full'
+                          src={getEmbedUrl(performance.youtubeUrl)}
+                          title={performance.title}
+                          frameBorder='0'
+                          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+                          allowFullScreen
+                        ></iframe>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Sidebar */}
