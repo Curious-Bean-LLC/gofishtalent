@@ -122,12 +122,12 @@
 
 /* Fish SVG styling */
 .fish-body {
-  fill: #ff6b6b;
+  fill: #FF8C42;
   filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
 }
 
 .fish-fin {
-  fill: #ff8787;
+  fill: #FFB366;
 }
 
 .fish-eye {
