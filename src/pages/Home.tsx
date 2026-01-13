@@ -7,7 +7,7 @@ const Home: React.FC = () => {
   const navigate = useNavigate()
 
   const handleFishClick = (route: string) => {
-    navigate(route)
+    navigate(route, { state: { from: 'home' } })
   }
 
   // SVG Fish Component
@@ -74,10 +74,6 @@ const Home: React.FC = () => {
 
   return (
     <div className='flex flex-col gap-6 max-w-7xl mx-auto px-8 py-12 text-center min-h-[calc(100vh-5rem)]'>
-      <p className='text-xl md:text-lg sm:text-base text-gray-400 leading-relaxed mb-12'>
-        Dive into our pond of amazing musical talent!
-      </p>
-
       {/* Fish Pond */}
       <div className='fish-pond'>
         {/* Bubbles */}
@@ -124,17 +120,17 @@ const Home: React.FC = () => {
         {musicians.map((musician) => (
           <div
             key={musician.id}
-            className='flex items-center gap-3 bg-gray-800/50 px-4 py-2 rounded-lg cursor-pointer hover:bg-gray-700/50 transition-colors'
+            className='flex items-center gap-3 bg-orange-100 px-4 py-2 rounded-lg cursor-pointer hover:bg-[#FF8C42] hover:text-white transition-colors border-2 border-[#FF8C42]'
             onClick={() => handleFishClick(musician.route)}
           >
             <img
               src={musician.image}
               alt={musician.name}
-              className='w-10 h-10 rounded-full border-2 border-white'
+              className='w-10 h-10 rounded-full border-2 border-[#FF8C42]'
             />
             <div className='text-left'>
-              <div className='text-white font-semibold'>{musician.name}</div>
-              <div className='text-gray-400 text-sm'>{musician.genre}</div>
+              <div className='font-semibold'>{musician.name}</div>
+              <div className='text-sm'>{musician.genre}</div>
             </div>
           </div>
         ))}

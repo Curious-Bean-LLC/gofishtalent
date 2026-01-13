@@ -8,10 +8,10 @@ const Talent: React.FC = () => {
 
   return (
     <div className='flex flex-col gap-6 max-w-7xl mx-auto px-8 py-12 text-center min-h-[calc(100vh-5rem)]'>
-      <h1 className='text-5xl md:text-4xl sm:text-3xl font-bold mb-6 text-white'>
+      <h1 className='text-5xl md:text-4xl sm:text-3xl font-bold mb-6 text-[#1e3a5f]'>
         Our Talent
       </h1>
-      <p className='text-xl md:text-lg sm:text-base text-gray-400 leading-relaxed'>
+      <p className='text-xl md:text-lg sm:text-base text-[#2a5a8a] leading-relaxed'>
         Discover the amazing talent we represent.
       </p>
 
@@ -21,7 +21,7 @@ const Talent: React.FC = () => {
           <div
             key={musician.id}
             onClick={() => navigate(musician.route)}
-            className='bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-orange-500/50 border-r-4 border-b-4 border-gray-200 aspect-[2/3] flex flex-col relative cursor-pointer'
+            className='bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-[#FF8C42]/50 border-r-4 border-b-4 border-[#FF8C42] aspect-[2/3] flex flex-col relative cursor-pointer'
           >
             {/* Card Body - Band Picture */}
             <div className='flex-1 flex flex-col gap-6 items-center justify-center p-6'>
