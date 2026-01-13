@@ -113,7 +113,9 @@ const TalentEPK: React.FC = () => {
         <div className='lg:col-span-2 space-y-8'>
           {/* Bio Section */}
           <div className='bg-orange-50 rounded-xl p-6 border-2 border-[#FF8C42]'>
-            <h2 className='text-3xl font-bold text-[#1e3a5f] mb-4'>Biography</h2>
+            <h2 className='text-3xl font-bold text-[#1e3a5f] mb-4'>
+              Biography
+            </h2>
             <p className='text-[#2a5a8a] leading-relaxed text-lg'>
               {musician.bio}
             </p>
@@ -170,7 +172,9 @@ const TalentEPK: React.FC = () => {
 
           {/* Influences Section */}
           <div className='bg-orange-50 rounded-xl p-6 border-2 border-[#FF8C42]'>
-            <h2 className='text-3xl font-bold text-[#1e3a5f] mb-4'>Influences</h2>
+            <h2 className='text-3xl font-bold text-[#1e3a5f] mb-4'>
+              Influences
+            </h2>
             <div className='flex flex-wrap gap-3'>
               {musician.influences.map((influence, index) => (
                 <span
@@ -222,13 +226,19 @@ const TalentEPK: React.FC = () => {
                 {musician.performances.map((performance, index) => {
                   // Convert YouTube URL to embed URL
                   const getEmbedUrl = (url: string) => {
-                    const videoId = url.match(/(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/)?.[1]
-                    return videoId ? `https://www.youtube.com/embed/${videoId}` : url
+                    const videoId = url.match(
+                      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/
+                    )?.[1]
+                    return videoId
+                      ? `https://www.youtube.com/embed/${videoId}`
+                      : url
                   }
 
                   return (
                     <div key={index} className='space-y-2'>
-                      <h3 className={`${musician.fontClass} text-xl font-semibold text-[#1e3a5f]`}>
+                      <h3
+                        className={`${musician.fontClass} text-xl font-semibold text-[#1e3a5f]`}
+                      >
                         {performance.title}
                       </h3>
                       <div className='relative w-full pt-[56.25%] bg-[#1e3a5f] rounded-lg overflow-hidden border-2 border-[#FF8C42]'>
@@ -324,46 +334,47 @@ const TalentEPK: React.FC = () => {
 
           {/* Spotify Embed */}
           {musician.spotifyEmbedLink && (
-            <div className='bg-orange-50 rounded-xl p-6 border-2 border-[#FF8C42]'>
-              <h2 className='text-2xl font-bold text-[#1e3a5f] mb-4'>Listen Now</h2>
-              <iframe
-                data-testid='embed-iframe'
-                style={{ borderRadius: '12px' }}
-                src={musician.spotifyEmbedLink}
-                width='100%'
-                height='352'
-                frameBorder='0'
-                allowFullScreen
-                allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
-                loading='lazy'
-              ></iframe>
-            </div>
+            <iframe
+              data-testid='embed-iframe'
+              style={{ borderRadius: '12px' }}
+              src={musician.spotifyEmbedLink}
+              width='100%'
+              height='352'
+              frameBorder='0'
+              allowFullScreen
+              allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
+              loading='lazy'
+            ></iframe>
           )}
 
           {/* Songkick Widget */}
-          <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
-            <a
-              href={`https://www.songkick.com/artists/${musician.songkickArtistId}`}
-              className='songkick-widget'
-              data-theme='dark'
-              data-track-button='on'
-              data-detect-style='off'
-              data-background-color='rgb(0,0,0,1)'
-              data-font-color='rgb(255,255,255,1)'
-              data-button-bg-color='rgb(255,255,255,1)'
-              data-button-text-color='rgb(0,0,0,1)'
-              data-locale='en'
-              data-other-artists='on'
-              data-share-button='on'
-              data-country-filter='on'
-              data-rsvp='on'
-              data-request-show='on'
-              data-past-events='off'
-              data-past-events-offtour='off'
-              data-remind-me='off'
-              // style='display: none;'
-            ></a>
-          </div>
+          {musician.songkickArtistId &&
+            musician.songkickArtistId.trim() !== '' &&
+            musician.songkickArtistId !== 'YOUR_SONGKICK_ARTIST_ID' && (
+              <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
+                <a
+                  href={`https://www.songkick.com/artists/${musician.songkickArtistId}`}
+                  className='songkick-widget'
+                  data-theme='dark'
+                  data-track-button='on'
+                  data-detect-style='off'
+                  data-background-color='rgb(0,0,0,1)'
+                  data-font-color='rgb(255,255,255,1)'
+                  data-button-bg-color='rgb(255,255,255,1)'
+                  data-button-text-color='rgb(0,0,0,1)'
+                  data-locale='en'
+                  data-other-artists='on'
+                  data-share-button='on'
+                  data-country-filter='on'
+                  data-rsvp='on'
+                  data-request-show='on'
+                  data-past-events='off'
+                  data-past-events-offtour='off'
+                  data-remind-me='off'
+                  // style='display: none;'
+                ></a>
+              </div>
+            )}
         </div>
       </div>
     </div>
