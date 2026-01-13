@@ -317,6 +317,25 @@ const TalentEPK: React.FC = () => {
               </button>
             </div>
           </div>
+
+          {/* Spotify Embed */}
+          {musician.spotifyEmbedLink && (
+            <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
+              <h2 className='text-2xl font-bold text-white mb-4'>Listen Now</h2>
+              <iframe
+                data-testid='embed-iframe'
+                style={{ borderRadius: '12px' }}
+                src={musician.spotifyEmbedLink}
+                width='100%'
+                height='352'
+                frameBorder='0'
+                allowFullScreen
+                allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
+                loading='lazy'
+              ></iframe>
+            </div>
+          )}
+
           {/* Songkick Widget */}
           <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
             <a

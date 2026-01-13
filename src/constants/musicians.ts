@@ -43,6 +43,7 @@ export const musicians = [
       soundcloud: 'https://soundcloud.com/fairyastronaut',
       youtube: 'https://youtube.com/@fairyastronaut',
     },
+    spotifyEmbedLink: 'https://open.spotify.com/embed/artist/2o2CoR0mS78JbibKCr4q4q?utm_source=generator&theme=0',
     songkickArtistId: '10384508',
     performances: [
       {
@@ -191,5 +192,6 @@ export const musicians = [
         quote: 'The soul of an 80’s vampire',
       },
     ],
+    spotifyEmbedLink: 'https://open.spotify.com/embed/artist/75HqvSa3U6VfjkiCcKrOVe?utm_source=generator&theme=0',
   },
 ]
