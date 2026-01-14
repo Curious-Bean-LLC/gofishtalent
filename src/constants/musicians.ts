@@ -45,14 +45,28 @@ export const musicians = [
     },
     spotifyEmbedLink: 'https://open.spotify.com/embed/artist/2o2CoR0mS78JbibKCr4q4q?utm_source=generator&theme=0',
     songkickArtistId: '10384508',
+    shows: [
+      {
+        date: 'February 14, 2026',
+        event_name: "Valentine's Day Special",
+        venue: 'Cactus Club',
+        location: 'Milwaukee, WI',
+        other_talent: 'Modern Haunting, Local Band',
+        ticket_link: 'https://example.com/tickets',
+        social_link: 'https://facebook.com/events/12345',
+      },
+    ],
     performances: [
       {
         title: 'Big Fish Bowl LIVE at Cactus Club (Milwaukee, WI)',
         youtubeUrl: 'https://youtu.be/ZePMJCnMH5g',
+        event_name: 'Big Fish Bowl 2025',
+        social_link: 'https://instagram.com/bigfishbowl',
       },
       {
         title: 'Suburbia LIVE EP Release Show July 2025 (Milwaukee, WI)',
         youtubeUrl: 'https://youtu.be/h_miVJPdovE',
+        event_name: 'Suburbia EP Release',
       },
       {
         title: 'Yes Woman LIVE EP Release Show July 2025 (Milwaukee, WI)',
@@ -114,6 +128,25 @@ export const musicians = [
       youtube: 'https://youtube.com/@adriennexash',
     },
     songkickArtistId: 'YOUR_SONGKICK_ARTIST_ID', // Replace with actual Songkick artist ID
+    shows: [
+      {
+        date: 'March 8, 2026',
+        event_name: 'Spring Showcase',
+        venue: 'The Rave',
+        location: 'Milwaukee, WI',
+        other_talent: 'Fairy Astronaut',
+        ticket_link: 'https://example.com/tickets',
+        social_link: 'https://instagram.com/p/springshow',
+      },
+      {
+        date: 'March 22, 2026',
+        event_name: 'Solo Performance Night',
+        venue: 'Turner Hall Ballroom',
+        location: 'Milwaukee, WI',
+        other_talent: '',
+        ticket_link: 'https://example.com/tickets',
+      },
+    ],
     performances: [
       {
         title: 'Live Performance',
@@ -170,6 +203,29 @@ export const musicians = [
       youtube: 'https://youtube.com/@modernhaunting',
     },
     songkickArtistId: '10312224', // Replace with actual Songkick artist ID
+    shows: [
+      {
+        date: 'February 20, 2026',
+        venue: 'Meyer Theatre',
+        location: 'Green Bay, WI',
+        other_talent: 'Local Support',
+        ticket_link: 'https://example.com/tickets',
+      },
+      {
+        date: 'April 13, 2026',
+        venue: 'The Atrium',
+        location: 'Green Bay, WI',
+        other_talent: 'Special Guests TBA',
+        ticket_link: 'https://example.com/tickets',
+      },
+      {
+        venue: 'Hagemeister Park',
+        location: 'Green Bay, WI',
+        other_talent: 'Summer Festival',
+        ticket_link: 'https://example.com/tickets',
+        event_name: 'Summer Fest 2026',
+      },
+    ],
     performances: [
       {
         title: '09/13/2024 All Bands on Deck (Green Bay, WI)',
