@@ -4,7 +4,57 @@ import FACover from '../../assets/images/fa-cover.png'
 import MHCover from '../../assets/images/mh-cover.jpg'
 import AXACover from '../../assets/images/axa-cover.png'
 
-export const musicians = [
+export interface Musician {
+  id: number
+  logo: string
+  image: string
+  name: string
+  genre: string
+  color: string
+  fontClass: string
+  route: string
+  bio: string
+  location: string
+  influences: string[]
+  highlights: string[]
+  sets: {
+    name: string
+    duration: string
+    description: string
+  }[]
+  socialLinks: {
+    spotify?: string
+    instagram?: string
+    website?: string
+    bandcamp?: string
+    soundcloud?: string
+    youtube?: string
+  }
+  spotifyEmbedLink?: string
+  songkickArtistId?: string
+  performances?: {
+    title: string
+    youtubeUrl: string
+    event_name?: string
+    social_link?: string
+  }[]
+  pressCoverage?: {
+    title: string
+    url: string
+    quote?: string
+  }[]
+  shows?: {
+    date?: string
+    event_name?: string
+    venue: string
+    location: string
+    other_talent?: string
+    ticket_link: string
+    social_link?: string
+  }[]
+}
+
+export const musicians: Musician[] = [
   {
     id: 1,
     logo: FALogo,
@@ -43,7 +93,8 @@ export const musicians = [
       soundcloud: 'https://soundcloud.com/fairyastronaut',
       youtube: 'https://youtube.com/@fairyastronaut',
     },
-    spotifyEmbedLink: 'https://open.spotify.com/embed/artist/2o2CoR0mS78JbibKCr4q4q?utm_source=generator&theme=0',
+    spotifyEmbedLink:
+      'https://open.spotify.com/embed/artist/2o2CoR0mS78JbibKCr4q4q?utm_source=generator&theme=0',
     songkickArtistId: '10384508',
     shows: [
       {
@@ -248,6 +299,7 @@ export const musicians = [
         quote: 'The soul of an 80’s vampire',
       },
     ],
-    spotifyEmbedLink: 'https://open.spotify.com/embed/artist/75HqvSa3U6VfjkiCcKrOVe?utm_source=generator&theme=0',
+    spotifyEmbedLink:
+      'https://open.spotify.com/embed/artist/75HqvSa3U6VfjkiCcKrOVe?utm_source=generator&theme=0',
   },
 ]
