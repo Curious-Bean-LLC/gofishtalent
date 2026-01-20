@@ -80,40 +80,63 @@ const TalentEPK: React.FC = () => {
       )}
 
       {/* Hero Section */}
-      <div className='mb-8'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
-          {/* Cover Image */}
+      <div className='mb-8 space-y-6'>
+        {/* Artist Info Row - Centered */}
+        <div className='text-center'>
+          <h1
+            className={`text-6xl max-md:text-4xl font-bold text-[var(--tertiary)] mb-3 ${musician.fontClass}`}
+          >
+            {musician.name}
+          </h1>
+          <p className='text-2xl max-md:text-xl text-[var(--secondary)] mb-2'>
+            {musician.genre}
+          </p>
+          <p className='text-lg text-[var(--secondary)]'>
+            {musician.location}
+          </p>
+        </div>
+
+        {/* Image Gallery Row */}
+        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+          {/* Main Image - Takes up 50% */}
           <div className='rounded-xl overflow-hidden shadow-2xl'>
             <img
               src={musician.image}
               alt={musician.name}
-              className='w-full object-cover'
+              className='w-full h-full object-cover'
             />
           </div>
 
-          {/* Artist Info */}
-          <div className='space-y-6'>
-            <div>
-              <h1
-                className={`text-6xl max-md:text-4xl font-bold text-[var(--tertiary)] mb-3 ${musician.fontClass}`}
-              >
-                {musician.name}
-              </h1>
-              <p className='text-2xl max-md:text-xl text-[var(--secondary)] mb-2'>
-                {musician.genre}
-              </p>
-              <p className='text-lg text-[var(--secondary)]'>
-                {musician.location}
-              </p>
-
-              <div className='mt-4'>
-                <button
-                  onClick={() => navigate(`/tickets?artist=${slug}`)}
-                  className='px-6 py-3 bg-[var(--primary)] hover:bg-[#ff7a2e] text-[var(--white)] font-bold rounded-lg transition-colors shadow-md inline-flex items-center gap-2'
-                >
-                  <span>View Upcoming Shows</span>
-                </button>
-              </div>
+          {/* Additional Images Grid - 2x2 grid taking up 50% */}
+          <div className='grid grid-cols-2 gap-4'>
+            {/* Placeholder for additional images - can be added to musician data later */}
+            <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+              <img
+                src={musician.image}
+                alt={`${musician.name} 2`}
+                className='w-full h-full object-cover opacity-50'
+              />
+            </div>
+            <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+              <img
+                src={musician.image}
+                alt={`${musician.name} 3`}
+                className='w-full h-full object-cover opacity-50'
+              />
+            </div>
+            <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+              <img
+                src={musician.image}
+                alt={`${musician.name} 4`}
+                className='w-full h-full object-cover opacity-50'
+              />
+            </div>
+            <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+              <img
+                src={musician.image}
+                alt={`${musician.name} 5`}
+                className='w-full h-full object-cover opacity-50'
+              />
             </div>
           </div>
         </div>
@@ -352,12 +375,18 @@ const TalentEPK: React.FC = () => {
             </div>
 
             {/* Contact Button */}
-            <div className='mt-6 pt-6 border-t-2 border-orange-200'>
+            <div className='mt-6 pt-6 border-t-2 border-orange-200 space-y-3'>
               <button
                 onClick={() => navigate('/contact')}
                 className='w-full px-4 py-3 bg-[var(--primary)] hover:bg-[#ff7a2e] rounded-lg transition-colors text-[var(--white)] font-semibold shadow-md'
               >
                 Book This Artist
+              </button>
+              <button
+                onClick={() => navigate(`/tickets?artist=${slug}`)}
+                className='w-full px-4 py-3 bg-[var(--secondary)] hover:bg-[var(--tertiary)] rounded-lg transition-colors text-[var(--white)] font-semibold shadow-md'
+              >
+                View Upcoming Shows
               </button>
             </div>
           </div>
