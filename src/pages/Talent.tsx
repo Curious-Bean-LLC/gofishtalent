@@ -40,10 +40,10 @@ const Talent: React.FC = () => {
             </div>
 
             {/* Playing Card Corner Decorations */}
-            <div className='absolute top-4 left-4 text-black font-bold text-xl'>
+            <div className='absolute top-4 left-4 text-[#1e3a5f] font-bold text-xl'>
               <FaFish />
             </div>
-            <div className='absolute bottom-4 right-4 text-black font-bold text-xl rotate-180'>
+            <div className='absolute bottom-4 right-4 text-[#1e3a5f] font-bold text-xl rotate-180'>
               <FaFish />
             </div>
           </div>
