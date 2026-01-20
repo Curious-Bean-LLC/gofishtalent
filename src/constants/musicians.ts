@@ -5,7 +5,7 @@ import MHCover from '../../assets/images/mh-cover.jpg'
 import AXACover from '../../assets/images/axa-cover.png'
 
 export interface Musician {
-  id: number
+  slug: string
   logo: string
   image: string
   name: string
@@ -43,20 +43,11 @@ export interface Musician {
     url: string
     quote?: string
   }[]
-  shows?: {
-    date?: string
-    event_name?: string
-    venue: string
-    location: string
-    other_talent?: string
-    ticket_link: string
-    social_link?: string
-  }[]
 }
 
 export const musicians: Musician[] = [
   {
-    id: 1,
+    slug: 'fairy-astronaut',
     logo: FALogo,
     name: 'Fairy Astronaut',
     genre: 'Psychedelic Art-Pop',
@@ -96,17 +87,6 @@ export const musicians: Musician[] = [
     spotifyEmbedLink:
       'https://open.spotify.com/embed/artist/2o2CoR0mS78JbibKCr4q4q?utm_source=generator&theme=0',
     songkickArtistId: '10384508',
-    shows: [
-      {
-        date: 'February 14, 2026',
-        event_name: "Valentine's Day Special",
-        venue: 'Cactus Club',
-        location: 'Milwaukee, WI',
-        other_talent: 'Modern Haunting, Local Band',
-        ticket_link: 'https://example.com/tickets',
-        social_link: 'https://facebook.com/events/12345',
-      },
-    ],
     performances: [
       {
         title: 'Big Fish Bowl LIVE at Cactus Club (Milwaukee, WI)',
@@ -135,7 +115,7 @@ export const musicians: Musician[] = [
     ],
   },
   {
-    id: 2,
+    slug: 'adriennexash',
     logo: GFTLogo,
     name: 'AdriennexAsh',
     genre: 'Vocal pop duo',
@@ -179,25 +159,6 @@ export const musicians: Musician[] = [
       youtube: 'https://youtube.com/@adriennexash',
     },
     songkickArtistId: 'YOUR_SONGKICK_ARTIST_ID', // Replace with actual Songkick artist ID
-    shows: [
-      {
-        date: 'March 8, 2026',
-        event_name: 'Spring Showcase',
-        venue: 'The Rave',
-        location: 'Milwaukee, WI',
-        other_talent: 'Fairy Astronaut',
-        ticket_link: 'https://example.com/tickets',
-        social_link: 'https://instagram.com/p/springshow',
-      },
-      {
-        date: 'March 22, 2026',
-        event_name: 'Solo Performance Night',
-        venue: 'Turner Hall Ballroom',
-        location: 'Milwaukee, WI',
-        other_talent: '',
-        ticket_link: 'https://example.com/tickets',
-      },
-    ],
     performances: [
       {
         title: 'Live Performance',
@@ -213,7 +174,7 @@ export const musicians: Musician[] = [
     ],
   },
   {
-    id: 3,
+    slug: 'modern-haunting',
     logo: FALogo,
     name: 'Modern Haunting',
     genre: 'Paranormal dance rock',
@@ -254,29 +215,6 @@ export const musicians: Musician[] = [
       youtube: 'https://youtube.com/@modernhaunting',
     },
     songkickArtistId: '10312224', // Replace with actual Songkick artist ID
-    shows: [
-      {
-        date: 'February 20, 2026',
-        venue: 'Meyer Theatre',
-        location: 'Green Bay, WI',
-        other_talent: 'Local Support',
-        ticket_link: 'https://example.com/tickets',
-      },
-      {
-        date: 'April 13, 2026',
-        venue: 'The Atrium',
-        location: 'Green Bay, WI',
-        other_talent: 'Special Guests TBA',
-        ticket_link: 'https://example.com/tickets',
-      },
-      {
-        venue: 'Hagemeister Park',
-        location: 'Green Bay, WI',
-        other_talent: 'Summer Festival',
-        ticket_link: 'https://example.com/tickets',
-        event_name: 'Summer Fest 2026',
-      },
-    ],
     performances: [
       {
         title: '09/13/2024 All Bands on Deck (Green Bay, WI)',

@@ -1,44 +1,21 @@
 import React, { useMemo } from 'react'
-import { useSearchParams } from 'react-router-dom'
-import { musicians } from '../constants/musicians'
 import { FaTicketAlt } from 'react-icons/fa'
+import { useSearchParams } from 'react-router-dom'
+import { allShowsSortedByDate, musicians } from '../constants'
 
 const Tickets: React.FC = () => {
   const [searchParams, setSearchParams] = useSearchParams()
   const artistFilter = searchParams.get('artist') || 'all'
 
-  // Collect all shows from all musicians
-  const allShows = useMemo(() => {
-    return musicians
-      .flatMap((musician) =>
-        musician.shows?.map((show) => ({
-          ...show,
-          artistName: musician.name,
-          artistFontClass: musician.fontClass,
-          artistSlug: musician.route.split('/').pop() || '',
-        })) || []
-      )
-      .sort((a, b) => {
-        // Sort by date if available, otherwise keep original order
-        if (a.date && b.date) {
-          return new Date(a.date).getTime() - new Date(b.date).getTime()
-        }
-        return 0
-      })
-  }, [])
-
   // Filter shows based on selected artist
   const filteredShows = useMemo(() => {
     if (artistFilter === 'all') {
-      return allShows
+      return allShowsSortedByDate
     }
-    return allShows.filter((show) => show.artistSlug === artistFilter)
-  }, [allShows, artistFilter])
-
-  // Get unique artists who have shows
-  const artistsWithShows = useMemo(() => {
-    return musicians.filter((musician) => musician.shows && musician.shows.length > 0)
-  }, [])
+    return allShowsSortedByDate.filter(
+      (show) => show.artistSlug === artistFilter,
+    )
+  }, [artistFilter])
 
   const handleFilterChange = (slug: string) => {
     if (slug === 'all') {
@@ -53,9 +30,6 @@ const Tickets: React.FC = () => {
       <h1 className='text-5xl md:text-4xl sm:text-3xl font-bold mb-6 text-[#1e3a5f]'>
         Upcoming Shows
       </h1>
-      <p className='text-xl md:text-lg sm:text-base text-[#2a5a8a] leading-relaxed mb-4'>
-        Catch our talent live! Get your tickets now.
-      </p>
 
       {/* Artist Filter */}
       <div className='flex flex-wrap justify-center gap-3 mb-4'>
@@ -69,14 +43,13 @@ const Tickets: React.FC = () => {
         >
           All Artists
         </button>
-        {artistsWithShows.map((musician) => {
-          const slug = musician.route.split('/').pop() || ''
+        {musicians.map((musician) => {
           return (
             <button
-              key={musician.id}
-              onClick={() => handleFilterChange(slug)}
+              key={musician.slug}
+              onClick={() => handleFilterChange(musician.slug)}
               className={`px-4 py-2 rounded-lg font-semibold transition-all ${
-                artistFilter === slug
+                artistFilter === musician.slug
                   ? 'bg-[#FF8C42] text-white shadow-md'
                   : 'bg-orange-100 text-[#2a5a8a] hover:bg-orange-200 border-2 border-orange-200'
               }`}
@@ -99,7 +72,9 @@ const Tickets: React.FC = () => {
             <div
               key={index}
               className={`bg-orange-50 hover:bg-orange-100 transition-all ${
-                index !== filteredShows.length - 1 ? 'border-b-2 border-[#FF8C42]' : ''
+                index !== filteredShows.length - 1
+                  ? 'border-b-2 border-[#FF8C42]'
+                  : ''
               }`}
             >
               {/* Four column layout with artist name on left */}
@@ -107,14 +82,15 @@ const Tickets: React.FC = () => {
                 {/* Column 1: Artist Name and Other Talent */}
                 <div className='flex flex-col justify-center md:border-r-2 md:border-[#FF8C42] md:pr-6 space-y-2'>
                   <h3
-                    className={`text-2xl font-bold text-[#1e3a5f] ${show.artistFontClass}`}
+                    className={`text-2xl font-bold text-[#1e3a5f] ${musicians.find((m) => m.slug === show.artistSlug)?.fontClass}`}
                   >
-                    {show.artistName}
+                    {musicians.find((m) => m.slug === show.artistSlug)?.name ||
+                      'Unknown Artist'}
                   </h3>
-                  {show.other_talent && (
+                  {show.lineup && (
                     <p className='text-[#2a5a8a] text-sm'>
                       <span className='font-semibold'>With: </span>
-                      {show.other_talent}
+                      {show.lineup.join(', ')}
                     </p>
                   )}
                 </div>
@@ -126,9 +102,9 @@ const Tickets: React.FC = () => {
                       {show.date}
                     </p>
                   )}
-                  {show.event_name && (
+                  {show.eventName && (
                     <p className='text-[#2a5a8a] font-semibold'>
-                      {show.event_name}
+                      {show.eventName}
                     </p>
                   )}
                 </div>
@@ -138,16 +114,14 @@ const Tickets: React.FC = () => {
                   <p className='text-[#1e3a5f] font-bold text-lg'>
                     {show.venue}
                   </p>
-                  <p className='text-[#2a5a8a]'>
-                    {show.location}
-                  </p>
+                  <p className='text-[#2a5a8a]'>{show.city}</p>
                 </div>
 
                 {/* Column 3: Ticket Link and Social Link */}
                 <div className='space-y-3'>
-                  {show.ticket_link ? (
+                  {show.ticketLink ? (
                     <a
-                      href={show.ticket_link}
+                      href={show.ticketLink}
                       target='_blank'
                       rel='noopener noreferrer'
                       className='block w-full px-4 py-3 bg-[#FF8C42] hover:bg-[#ff7a2e] text-white font-bold rounded-lg transition-colors shadow-md text-center'
@@ -162,9 +136,9 @@ const Tickets: React.FC = () => {
                       Tickets coming soon
                     </p>
                   )}
-                  {show.social_link && (
+                  {show.eventLink && (
                     <a
-                      href={show.social_link}
+                      href={show.eventLink}
                       target='_blank'
                       rel='noopener noreferrer'
                       className='block text-center px-4 py-2 text-[#FF8C42] hover:text-[#ff7a2e] font-semibold transition-colors border-2 border-[#FF8C42] hover:border-[#ff7a2e] rounded-lg'
