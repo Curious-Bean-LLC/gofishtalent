@@ -98,13 +98,21 @@ const Tickets: React.FC = () => {
                 {/* Column 2: Date and Event Name */}
                 <div className='space-y-2'>
                   {show.date && (
-                    <p className='text-[#1e3a5f] font-bold text-lg'>
-                      {new Date(show.date).toLocaleDateString(undefined, {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric',
-                      })}
-                    </p>
+                    <>
+                      <p className='text-[#1e3a5f] font-bold text-lg'>
+                        {new Date(show.date).toLocaleDateString(undefined, {
+                          year: 'numeric',
+                          month: 'long',
+                          day: 'numeric',
+                        })}
+                      </p>
+                      <p className='text-[#2a5a8a] text-sm'>
+                        {show.doorsTime && `Doors at ${show.doorsTime}`}
+                      </p>
+                      <p className='text-[#2a5a8a] text-sm'>
+                        {show.startTime && `Starts at ${show.startTime}`}
+                      </p>
+                    </>
                   )}
                   {show.eventName && (
                     <p className='text-[#2a5a8a] font-semibold'>

@@ -3,7 +3,9 @@ export interface Show {
   date: string // ISO 8601 format
   venue: string
   city: string
-  lineup: string[]
+  lineup?: string[]
+  doorsTime?: string
+  startTime?: string
   eventName?: string
   ticketLink?: string
   eventLink?: string
@@ -15,6 +17,8 @@ const fa_shows: Show[] = [
   {
     artistSlug: 'fairy-astronaut',
     date: '2024-09-15',
+    doorsTime: '7:00 PM',
+    startTime: '8:00 PM',
     venue: 'The Grand Theater',
     city: 'Springfield',
     lineup: ['The Headliners', 'Opening Act'],
