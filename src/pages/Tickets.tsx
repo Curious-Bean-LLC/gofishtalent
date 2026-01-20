@@ -50,7 +50,7 @@ const Tickets: React.FC = () => {
               onClick={() => handleFilterChange(musician.slug)}
               className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                 artistFilter === musician.slug
-                  ? 'bg-[var(--primary)] text-white shadow-md'
+                  ? 'bg-[var(--primary)] text-[var(--white)] shadow-md'
                   : 'bg-orange-100 text-[var(--secondary)] hover:bg-orange-200 border-2 border-orange-200'
               }`}
             >
@@ -135,7 +135,7 @@ const Tickets: React.FC = () => {
                       href={show.ticketLink}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='block w-full px-4 py-3 bg-[var(--primary)] hover:bg-[#ff7a2e] text-white font-bold rounded-lg transition-colors shadow-md text-center'
+                      className='block w-full px-4 py-3 bg-[var(--primary)] hover:bg-[#ff7a2e] text-[var(--white)] font-bold rounded-lg transition-colors shadow-md text-center'
                     >
                       <div className='flex items-center justify-center gap-2'>
                         <FaTicketAlt />

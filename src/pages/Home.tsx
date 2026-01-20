@@ -120,7 +120,7 @@ const Home: React.FC = () => {
         {musicians.map((musician) => (
           <div
             key={musician.slug}
-            className='flex items-center gap-3 bg-orange-100 px-4 py-2 rounded-lg cursor-pointer hover:bg-[var(--primary)] hover:text-white transition-colors border-2 border-[var(--primary)]'
+            className='flex items-center gap-3 bg-orange-100 px-4 py-2 rounded-lg cursor-pointer hover:bg-[var(--primary)] hover:text-[var(--white)] transition-colors border-2 border-[var(--primary)]'
             onClick={() => handleFishClick(musician.route)}
           >
             <img

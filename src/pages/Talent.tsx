@@ -21,7 +21,7 @@ const Talent: React.FC = () => {
           <div
             key={musician.slug}
             onClick={() => navigate(musician.route)}
-            className='bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-[var(--primary)]/50 border-r-4 border-b-4 border-[var(--primary)] aspect-[2/3] flex flex-col relative cursor-pointer'
+            className='bg-[var(--white)] rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-[var(--primary)]/50 border-r-4 border-b-4 border-[var(--primary)] aspect-[2/3] flex flex-col relative cursor-pointer'
           >
             {/* Card Body - Band Picture */}
             <div className='flex-1 flex flex-col gap-6 items-center justify-center p-6'>
