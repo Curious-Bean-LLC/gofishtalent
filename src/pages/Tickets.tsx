@@ -89,7 +89,6 @@ const Tickets: React.FC = () => {
                   </h3>
                   {show.lineup && (
                     <p className='text-[#2a5a8a] text-sm'>
-                      <span className='font-semibold'>With: </span>
                       {show.lineup.join(', ')}
                     </p>
                   )}
