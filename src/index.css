@@ -66,6 +66,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'ZCOOL_KuaiLe';
+  src: url('/assets/fonts/ZCOOL_KuaiLe/ZCOOLKuaiLe-Regular.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 .font-bangers {
   font-family: 'Bangers', sans-serif;
 }
@@ -104,6 +112,10 @@
   font-family: 'PT_Sans_Caption', sans-serif;
 }
 
+.font-zcool-kuaile {
+  font-family: 'ZCOOL_KuaiLe', sans-serif;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -111,7 +123,7 @@
 
   color-scheme: light;
   color: #1e3a5f;
-  background-color: #FFF8E7;
+  background-color: #fff8e7;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -124,7 +136,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   font-family: 'PT_Sans_Caption', sans-serif;
-  background-color: #FFF8E7;
+  background-color: #fff8e7;
 }
 
 h1,
@@ -139,10 +151,9 @@ h6 {
 .external-link {
   text-decoration: underline;
   text-decoration-style: wavy;
-  color: #FF8C42;
+  color: #ff8c42;
   font-weight: 600;
 }
 
 .songkick-widget {
-  
 }

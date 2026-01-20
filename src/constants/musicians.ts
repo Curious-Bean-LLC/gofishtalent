@@ -53,7 +53,7 @@ export const musicians: Musician[] = [
     genre: 'Psychedelic Art-Pop',
     color: '#ff6b6b',
     image: FACover,
-    fontClass: 'font-gochi-hand',
+    fontClass: 'font-zcool-kuaile',
     route: '/talent/fairy-astronaut',
     bio: 'Fairy Astronaut is a Psychedelic Artpop Duo in Milwaukee, Wisconsin. Fronted by Brady Wayne- multi instrumentalist, producer, and McKenzie Van Oss- vocalist, multi instrumentalist, and former professional ballet dancer, stars collide to blast you off into a new dimension. The twink glam pair are originally from Green Bay, Wisconsin, and met in the Spring of 2024, where immediately a supernova was born. Quickly moving to Milwaukee later that fall, they began to shake things up leaving audiences with questions such as, “What is going on here?” and “Is this Performance Art? A Synth Wizard Battle? A Dance Party?” But what you really should be asking is, “Are we Human, or are we Fairy Astronaut?” and the answer is always, “Who Cares.”',
     location: 'Milwaukee, WI',
