@@ -8,7 +8,7 @@ import {
   FaSpotify,
   FaYoutube,
 } from 'react-icons/fa'
-import { useNavigate, useParams, useLocation } from 'react-router-dom'
+import { useLocation, useNavigate, useParams } from 'react-router-dom'
 import { musicians } from '../constants/musicians'
 
 const TalentEPK: React.FC = () => {
@@ -28,7 +28,7 @@ const TalentEPK: React.FC = () => {
     ) {
       // Remove existing Songkick script
       const existingScript = document.querySelector(
-        'script[src*="widget-app.songkick.com"]'
+        'script[src*="widget-app.songkick.com"]',
       )
       if (existingScript) {
         existingScript.remove()
@@ -43,7 +43,7 @@ const TalentEPK: React.FC = () => {
       // Cleanup function
       return () => {
         const scriptToRemove = document.querySelector(
-          `script[src*="${musician.songkickArtistId}"]`
+          `script[src*="${musician.songkickArtistId}"]`,
         )
         if (scriptToRemove) {
           scriptToRemove.remove()
@@ -103,18 +103,15 @@ const TalentEPK: React.FC = () => {
                 {musician.genre}
               </p>
               <p className='text-lg text-[#2a5a8a]'>{musician.location}</p>
-              
-              {/* Link to artist's shows if they have any */}
-              {musician.shows && musician.shows.length > 0 && (
-                <div className='mt-4'>
-                  <button
-                    onClick={() => navigate(`/tickets?artist=${slug}`)}
-                    className='px-6 py-3 bg-[#FF8C42] hover:bg-[#ff7a2e] text-white font-bold rounded-lg transition-colors shadow-md inline-flex items-center gap-2'
-                  >
-                    <span>View Upcoming Shows</span>
-                  </button>
-                </div>
-              )}
+
+              <div className='mt-4'>
+                <button
+                  onClick={() => navigate(`/tickets?artist=${slug}`)}
+                  className='px-6 py-3 bg-[#FF8C42] hover:bg-[#ff7a2e] text-white font-bold rounded-lg transition-colors shadow-md inline-flex items-center gap-2'
+                >
+                  <span>View Upcoming Shows</span>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -239,7 +236,7 @@ const TalentEPK: React.FC = () => {
                   // Convert YouTube URL to embed URL
                   const getEmbedUrl = (url: string) => {
                     const videoId = url.match(
-                      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/
+                      /(?:youtube\.com\/watch\?v=|youtu\.be\/)([^&\s]+)/,
                     )?.[1]
                     return videoId
                       ? `https://www.youtube.com/embed/${videoId}`
