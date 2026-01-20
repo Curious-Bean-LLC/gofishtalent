@@ -26,16 +26,16 @@ const Footer = () => {
               Talent
             </Link>
             <Link
-              to='/about'
-              className='text-[#2a5a8a] hover:text-[#FF8C42] transition-colors underline decoration-transparent hover:decoration-[#FF8C42]'
-            >
-              About
-            </Link>
-            <Link
               to='/tickets'
               className='text-[#2a5a8a] hover:text-[#FF8C42] transition-colors underline decoration-transparent hover:decoration-[#FF8C42]'
             >
               Tickets
+            </Link>
+            <Link
+              to='/about'
+              className='text-[#2a5a8a] hover:text-[#FF8C42] transition-colors underline decoration-transparent hover:decoration-[#FF8C42]'
+            >
+              About
             </Link>
             <Link
               to='/contact'

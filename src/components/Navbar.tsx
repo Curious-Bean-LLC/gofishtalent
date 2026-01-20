@@ -64,15 +64,6 @@ const Navbar = () => {
         >
           <li className='h-20 flex items-center max-md:w-full max-md:h-16 max-md:border-b max-md:border-orange-200'>
             <Link
-              to='/'
-              className='text-[#1e3a5f] no-underline px-4 py-2 h-full flex items-center transition-all duration-300 border-b-4 border-transparent hover:text-[#FF8C42] hover:border-[#FF8C42] max-md:w-full max-md:py-6 max-md:justify-center max-md:border-b-0 max-md:hover:bg-orange-50'
-              onClick={closeMenu}
-            >
-              Home
-            </Link>
-          </li>
-          <li className='h-20 flex items-center max-md:w-full max-md:h-16 max-md:border-b max-md:border-orange-200'>
-            <Link
               to='/talent'
               className='text-[#1e3a5f] no-underline px-4 py-2 h-full flex items-center transition-all duration-300 border-b-4 border-transparent hover:text-[#FF8C42] hover:border-[#FF8C42] max-md:w-full max-md:py-6 max-md:justify-center max-md:border-b-0 max-md:hover:bg-orange-50'
               onClick={closeMenu}
@@ -82,20 +73,20 @@ const Navbar = () => {
           </li>
           <li className='h-20 flex items-center max-md:w-full max-md:h-16 max-md:border-b max-md:border-orange-200'>
             <Link
-              to='/about'
-              className='text-[#1e3a5f] no-underline px-4 py-2 h-full flex items-center transition-all duration-300 border-b-4 border-transparent hover:text-[#FF8C42] hover:border-[#FF8C42] max-md:w-full max-md:py-6 max-md:justify-center max-md:border-b-0 max-md:hover:bg-orange-50'
-              onClick={closeMenu}
-            >
-              About
-            </Link>
-          </li>
-          <li className='h-20 flex items-center max-md:w-full max-md:h-16 max-md:border-b max-md:border-orange-200'>
-            <Link
               to='/tickets'
               className='text-[#1e3a5f] no-underline px-4 py-2 h-full flex items-center transition-all duration-300 border-b-4 border-transparent hover:text-[#FF8C42] hover:border-[#FF8C42] max-md:w-full max-md:py-6 max-md:justify-center max-md:border-b-0 max-md:hover:bg-orange-50'
               onClick={closeMenu}
             >
               Tickets
+            </Link>
+          </li>
+          <li className='h-20 flex items-center max-md:w-full max-md:h-16 max-md:border-b max-md:border-orange-200'>
+            <Link
+              to='/about'
+              className='text-[#1e3a5f] no-underline px-4 py-2 h-full flex items-center transition-all duration-300 border-b-4 border-transparent hover:text-[#FF8C42] hover:border-[#FF8C42] max-md:w-full max-md:py-6 max-md:justify-center max-md:border-b-0 max-md:hover:bg-orange-50'
+              onClick={closeMenu}
+            >
+              About
             </Link>
           </li>
           <li className='h-20 flex items-center max-md:w-full max-md:h-16 max-md:border-b max-md:border-orange-200'>
