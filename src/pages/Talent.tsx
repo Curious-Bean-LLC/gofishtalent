@@ -19,7 +19,7 @@ const Talent: React.FC = () => {
       <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto'>
         {musicians.map((musician) => (
           <div
-            key={musician.id}
+            key={musician.slug}
             onClick={() => navigate(musician.route)}
             className='bg-white rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-300 hover:scale-105 hover:shadow-[#FF8C42]/50 border-r-4 border-b-4 border-[#FF8C42] aspect-[2/3] flex flex-col relative cursor-pointer'
           >
