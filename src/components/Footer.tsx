@@ -7,7 +7,9 @@ const Footer = () => {
         <div className='flex flex-col md:flex-row justify-between items-center gap-6'>
           {/* Copyright/Brand */}
           <div className='text-[#2a5a8a] text-sm'>
-            <p className='font-slackey text-lg text-[#1e3a5f]'>Go Fish! Talent</p>
+            <p className='font-slackey text-lg text-[#1e3a5f]'>
+              Go Fish! Talent
+            </p>
             <p>&copy; {new Date().getFullYear()} All rights reserved</p>
           </div>
 

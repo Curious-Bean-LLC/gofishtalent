@@ -1,6 +1,6 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import { FaFish } from 'react-icons/fa6'
+import { useNavigate } from 'react-router-dom'
 import { musicians } from '../constants/musicians'
 
 const Talent: React.FC = () => {
