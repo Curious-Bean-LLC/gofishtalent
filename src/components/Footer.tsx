@@ -2,12 +2,12 @@ import { Link } from 'react-router-dom'
 
 const Footer = () => {
   return (
-    <footer className='bg-orange-50 border-t-2 border-[#FF8C42] py-8 mt-12'>
+    <footer className='bg-orange-50 border-t-2 border-[var(--primary)] py-8 mt-12'>
       <div className='max-w-7xl mx-auto px-8'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-6'>
           {/* Copyright/Brand */}
-          <div className='text-[#2a5a8a] text-sm'>
-            <p className='font-slackey text-lg text-[#1e3a5f]'>
+          <div className='text-[var(--secondary)] text-sm'>
+            <p className='font-slackey text-lg text-[var(--tertiary)]'>
               Go Fish! Talent
             </p>
             <p>&copy; {new Date().getFullYear()} All rights reserved</p>
@@ -17,43 +17,43 @@ const Footer = () => {
           <nav className='flex flex-wrap justify-center gap-6 text-sm'>
             <Link
               to='/'
-              className='text-[#2a5a8a] hover:text-[#FF8C42] transition-colors underline decoration-transparent hover:decoration-[#FF8C42]'
+              className='text-[var(--secondary)] hover:text-[var(--primary)] transition-colors underline decoration-transparent hover:decoration-[var(--primary)]'
             >
               Home
             </Link>
             <Link
               to='/talent'
-              className='text-[#2a5a8a] hover:text-[#FF8C42] transition-colors underline decoration-transparent hover:decoration-[#FF8C42]'
+              className='text-[var(--secondary)] hover:text-[var(--primary)] transition-colors underline decoration-transparent hover:decoration-[var(--primary)]'
             >
               Talent
             </Link>
             <Link
               to='/tickets'
-              className='text-[#2a5a8a] hover:text-[#FF8C42] transition-colors underline decoration-transparent hover:decoration-[#FF8C42]'
+              className='text-[var(--secondary)] hover:text-[var(--primary)] transition-colors underline decoration-transparent hover:decoration-[var(--primary)]'
             >
               Tickets
             </Link>
             <Link
               to='/about'
-              className='text-[#2a5a8a] hover:text-[#FF8C42] transition-colors underline decoration-transparent hover:decoration-[#FF8C42]'
+              className='text-[var(--secondary)] hover:text-[var(--primary)] transition-colors underline decoration-transparent hover:decoration-[var(--primary)]'
             >
               About
             </Link>
             <Link
               to='/contact'
-              className='text-[#2a5a8a] hover:text-[#FF8C42] transition-colors underline decoration-transparent hover:decoration-[#FF8C42]'
+              className='text-[var(--secondary)] hover:text-[var(--primary)] transition-colors underline decoration-transparent hover:decoration-[var(--primary)]'
             >
               Contact
             </Link>
           </nav>
 
           {/* Social Links */}
-          <div className='text-[#2a5a8a] text-sm'>
+          <div className='text-[var(--secondary)] text-sm'>
             <a
               href='https://www.instagram.com/gofishtalent'
               target='_blank'
               rel='noopener noreferrer'
-              className='hover:text-[#FF8C42] transition-colors underline decoration-transparent hover:decoration-[#FF8C42]'
+              className='hover:text-[var(--primary)] transition-colors underline decoration-transparent hover:decoration-[var(--primary)]'
             >
               Instagram
             </a>

@@ -120,13 +120,13 @@ const Home: React.FC = () => {
         {musicians.map((musician) => (
           <div
             key={musician.slug}
-            className='flex items-center gap-3 bg-orange-100 px-4 py-2 rounded-lg cursor-pointer hover:bg-[#FF8C42] hover:text-white transition-colors border-2 border-[#FF8C42]'
+            className='flex items-center gap-3 bg-orange-100 px-4 py-2 rounded-lg cursor-pointer hover:bg-[var(--primary)] hover:text-white transition-colors border-2 border-[var(--primary)]'
             onClick={() => handleFishClick(musician.route)}
           >
             <img
               src={musician.image}
               alt={musician.name}
-              className='w-10 h-10 rounded-full border-2 border-[#FF8C42]'
+              className='w-10 h-10 rounded-full border-2 border-[var(--primary)]'
             />
             <div className='text-left'>
               <div className='font-semibold'>{musician.name}</div>

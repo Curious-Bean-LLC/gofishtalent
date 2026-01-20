@@ -27,7 +27,7 @@ const Tickets: React.FC = () => {
 
   return (
     <div className='flex flex-col gap-6 max-w-7xl mx-auto px-8 py-12 text-center min-h-[calc(100vh-5rem)]'>
-      <h1 className='text-5xl md:text-4xl sm:text-3xl font-bold mb-6 text-[#1e3a5f]'>
+      <h1 className='text-5xl md:text-4xl sm:text-3xl font-bold mb-6 text-[var(--tertiary)]'>
         Upcoming Shows
       </h1>
 
@@ -37,8 +37,8 @@ const Tickets: React.FC = () => {
           onClick={() => handleFilterChange('all')}
           className={`px-4 py-2 rounded-lg font-semibold transition-all ${
             artistFilter === 'all'
-              ? 'bg-[#FF8C42] text-white shadow-md'
-              : 'bg-orange-100 text-[#2a5a8a] hover:bg-orange-200 border-2 border-orange-200'
+              ? 'bg-[var(--primary)] text-white shadow-md'
+              : 'bg-orange-100 text-[var(--secondary)] hover:bg-orange-200 border-2 border-orange-200'
           }`}
         >
           All Artists
@@ -50,8 +50,8 @@ const Tickets: React.FC = () => {
               onClick={() => handleFilterChange(musician.slug)}
               className={`px-4 py-2 rounded-lg font-semibold transition-all ${
                 artistFilter === musician.slug
-                  ? 'bg-[#FF8C42] text-white shadow-md'
-                  : 'bg-orange-100 text-[#2a5a8a] hover:bg-orange-200 border-2 border-orange-200'
+                  ? 'bg-[var(--primary)] text-white shadow-md'
+                  : 'bg-orange-100 text-[var(--secondary)] hover:bg-orange-200 border-2 border-orange-200'
               }`}
             >
               {musician.name}
@@ -61,34 +61,34 @@ const Tickets: React.FC = () => {
       </div>
 
       {filteredShows.length === 0 ? (
-        <div className='bg-orange-50 rounded-xl p-8 border-2 border-[#FF8C42]'>
-          <p className='text-[#2a5a8a] text-lg'>
+        <div className='bg-orange-50 rounded-xl p-8 border-2 border-[var(--primary)]'>
+          <p className='text-[var(--secondary)] text-lg'>
             No upcoming shows at the moment. Check back soon!
           </p>
         </div>
       ) : (
-        <div className='max-w-6xl mx-auto w-full border-2 border-[#FF8C42] rounded-xl overflow-hidden'>
+        <div className='max-w-6xl mx-auto w-full border-2 border-[var(--primary)] rounded-xl overflow-hidden'>
           {filteredShows.map((show, index) => (
             <div
               key={index}
               className={`bg-orange-50 hover:bg-orange-100 transition-all ${
                 index !== filteredShows.length - 1
-                  ? 'border-b-2 border-[#FF8C42]'
+                  ? 'border-b-2 border-[var(--primary)]'
                   : ''
               }`}
             >
               {/* Four column layout with artist name on left */}
               <div className='grid grid-cols-1 md:grid-cols-4 gap-6 p-6'>
                 {/* Column 1: Artist Name and Other Talent */}
-                <div className='flex flex-col justify-center md:border-r-2 md:border-[#FF8C42] md:pr-6 space-y-2'>
+                <div className='flex flex-col justify-center md:border-r-2 md:border-[var(--primary)] md:pr-6 space-y-2'>
                   <h3
-                    className={`text-2xl font-bold text-[#1e3a5f] ${musicians.find((m) => m.slug === show.artistSlug)?.fontClass}`}
+                    className={`text-2xl font-bold text-[var(--tertiary)] ${musicians.find((m) => m.slug === show.artistSlug)?.fontClass}`}
                   >
                     {musicians.find((m) => m.slug === show.artistSlug)?.name ||
                       'Unknown Artist'}
                   </h3>
                   {show.lineup && (
-                    <p className='text-[#2a5a8a] text-sm'>
+                    <p className='text-[var(--secondary)] text-sm'>
                       {show.lineup.join(', ')}
                     </p>
                   )}
@@ -98,23 +98,23 @@ const Tickets: React.FC = () => {
                 <div className='space-y-2'>
                   {show.date && (
                     <>
-                      <p className='text-[#1e3a5f] font-bold text-lg'>
+                      <p className='text-[var(--tertiary)] font-bold text-lg'>
                         {new Date(show.date).toLocaleDateString(undefined, {
                           year: 'numeric',
                           month: 'long',
                           day: 'numeric',
                         })}
                       </p>
-                      <p className='text-[#2a5a8a] text-sm'>
+                      <p className='text-[var(--secondary)] text-sm'>
                         {show.doorsTime && `Doors at ${show.doorsTime}`}
                       </p>
-                      <p className='text-[#2a5a8a] text-sm'>
+                      <p className='text-[var(--secondary)] text-sm'>
                         {show.startTime && `Starts at ${show.startTime}`}
                       </p>
                     </>
                   )}
                   {show.eventName && (
-                    <p className='text-[#2a5a8a] font-semibold'>
+                    <p className='text-[var(--secondary)] font-semibold'>
                       {show.eventName}
                     </p>
                   )}
@@ -122,10 +122,10 @@ const Tickets: React.FC = () => {
 
                 {/* Column 2: Venue and Location */}
                 <div className='space-y-2'>
-                  <p className='text-[#1e3a5f] font-bold text-lg'>
+                  <p className='text-[var(--tertiary)] font-bold text-lg'>
                     {show.venue}
                   </p>
-                  <p className='text-[#2a5a8a]'>{show.city}</p>
+                  <p className='text-[var(--secondary)]'>{show.city}</p>
                 </div>
 
                 {/* Column 3: Ticket Link and Social Link */}
@@ -135,7 +135,7 @@ const Tickets: React.FC = () => {
                       href={show.ticketLink}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='block w-full px-4 py-3 bg-[#FF8C42] hover:bg-[#ff7a2e] text-white font-bold rounded-lg transition-colors shadow-md text-center'
+                      className='block w-full px-4 py-3 bg-[var(--primary)] hover:bg-[#ff7a2e] text-white font-bold rounded-lg transition-colors shadow-md text-center'
                     >
                       <div className='flex items-center justify-center gap-2'>
                         <FaTicketAlt />
@@ -143,7 +143,7 @@ const Tickets: React.FC = () => {
                       </div>
                     </a>
                   ) : (
-                    <p className='text-[#2a5a8a] text-sm'>
+                    <p className='text-[var(--secondary)] text-sm'>
                       Tickets coming soon
                     </p>
                   )}
@@ -152,7 +152,7 @@ const Tickets: React.FC = () => {
                       href={show.eventLink}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='block text-center px-4 py-2 text-[#FF8C42] hover:text-[#ff7a2e] font-semibold transition-colors border-2 border-[#FF8C42] hover:border-[#ff7a2e] rounded-lg'
+                      className='block text-center px-4 py-2 text-[var(--primary)] hover:text-[#ff7a2e] font-semibold transition-colors border-2 border-[var(--primary)] hover:border-[#ff7a2e] rounded-lg'
                     >
                       Event Page →
                     </a>
