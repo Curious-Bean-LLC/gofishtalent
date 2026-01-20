@@ -4,15 +4,56 @@ import FACover from '../../assets/images/fa-cover.png'
 import MHCover from '../../assets/images/mh-cover.jpg'
 import AXACover from '../../assets/images/axa-cover.png'
 
-export const musicians = [
+export interface Musician {
+  slug: string
+  logo: string
+  image: string
+  name: string
+  genre: string
+  color: string
+  fontClass: string
+  route: string
+  bio: string
+  location: string
+  influences: string[]
+  highlights: string[]
+  sets: {
+    name: string
+    duration: string
+    description: string
+  }[]
+  socialLinks: {
+    spotify?: string
+    instagram?: string
+    website?: string
+    bandcamp?: string
+    soundcloud?: string
+    youtube?: string
+  }
+  spotifyEmbedLink?: string
+  songkickArtistId?: string
+  performances?: {
+    title: string
+    youtubeUrl: string
+    event_name?: string
+    social_link?: string
+  }[]
+  pressCoverage?: {
+    title: string
+    url: string
+    quote?: string
+  }[]
+}
+
+export const musicians: Musician[] = [
   {
-    id: 1,
+    slug: 'fairy-astronaut',
     logo: FALogo,
     name: 'Fairy Astronaut',
     genre: 'Psychedelic Art-Pop',
     color: '#ff6b6b',
     image: FACover,
-    fontClass: 'font-gochi-hand',
+    fontClass: 'font-zcool-kuaile',
     route: '/talent/fairy-astronaut',
     bio: 'Fairy Astronaut is a Psychedelic Artpop Duo in Milwaukee, Wisconsin. Fronted by Brady Wayne- multi instrumentalist, producer, and McKenzie Van Oss- vocalist, multi instrumentalist, and former professional ballet dancer, stars collide to blast you off into a new dimension. The twink glam pair are originally from Green Bay, Wisconsin, and met in the Spring of 2024, where immediately a supernova was born. Quickly moving to Milwaukee later that fall, they began to shake things up leaving audiences with questions such as, “What is going on here?” and “Is this Performance Art? A Synth Wizard Battle? A Dance Party?” But what you really should be asking is, “Are we Human, or are we Fairy Astronaut?” and the answer is always, “Who Cares.”',
     location: 'Milwaukee, WI',
@@ -43,16 +84,20 @@ export const musicians = [
       soundcloud: 'https://soundcloud.com/fairyastronaut',
       youtube: 'https://youtube.com/@fairyastronaut',
     },
-    spotifyEmbedLink: 'https://open.spotify.com/embed/artist/2o2CoR0mS78JbibKCr4q4q?utm_source=generator&theme=0',
+    spotifyEmbedLink:
+      'https://open.spotify.com/embed/artist/2o2CoR0mS78JbibKCr4q4q?utm_source=generator&theme=0',
     songkickArtistId: '10384508',
     performances: [
       {
         title: 'Big Fish Bowl LIVE at Cactus Club (Milwaukee, WI)',
         youtubeUrl: 'https://youtu.be/ZePMJCnMH5g',
+        event_name: 'Big Fish Bowl 2025',
+        social_link: 'https://instagram.com/bigfishbowl',
       },
       {
         title: 'Suburbia LIVE EP Release Show July 2025 (Milwaukee, WI)',
         youtubeUrl: 'https://youtu.be/h_miVJPdovE',
+        event_name: 'Suburbia EP Release',
       },
       {
         title: 'Yes Woman LIVE EP Release Show July 2025 (Milwaukee, WI)',
@@ -70,7 +115,7 @@ export const musicians = [
     ],
   },
   {
-    id: 2,
+    slug: 'adriennexash',
     logo: GFTLogo,
     name: 'AdriennexAsh',
     genre: 'Vocal pop duo',
@@ -129,7 +174,7 @@ export const musicians = [
     ],
   },
   {
-    id: 3,
+    slug: 'modern-haunting',
     logo: FALogo,
     name: 'Modern Haunting',
     genre: 'Paranormal dance rock',
@@ -192,6 +237,7 @@ export const musicians = [
         quote: 'The soul of an 80’s vampire',
       },
     ],
-    spotifyEmbedLink: 'https://open.spotify.com/embed/artist/75HqvSa3U6VfjkiCcKrOVe?utm_source=generator&theme=0',
+    spotifyEmbedLink:
+      'https://open.spotify.com/embed/artist/75HqvSa3U6VfjkiCcKrOVe?utm_source=generator&theme=0',
   },
 ]

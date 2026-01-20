@@ -103,6 +103,18 @@ const TalentEPK: React.FC = () => {
                 {musician.genre}
               </p>
               <p className='text-lg text-[#2a5a8a]'>{musician.location}</p>
+              
+              {/* Link to artist's shows if they have any */}
+              {musician.shows && musician.shows.length > 0 && (
+                <div className='mt-4'>
+                  <button
+                    onClick={() => navigate(`/tickets?artist=${slug}`)}
+                    className='px-6 py-3 bg-[#FF8C42] hover:bg-[#ff7a2e] text-white font-bold rounded-lg transition-colors shadow-md inline-flex items-center gap-2'
+                  >
+                    <span>View Upcoming Shows</span>
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -236,11 +248,28 @@ const TalentEPK: React.FC = () => {
 
                   return (
                     <div key={index} className='space-y-2'>
-                      <h3
-                        className={`${musician.fontClass} text-xl font-semibold text-[#1e3a5f]`}
-                      >
-                        {performance.title}
-                      </h3>
+                      <div className='flex items-start justify-between gap-4 flex-wrap'>
+                        <h3
+                          className={`${musician.fontClass} text-xl font-semibold text-[#1e3a5f]`}
+                        >
+                          {performance.title}
+                        </h3>
+                        {performance.event_name && (
+                          <span className='px-3 py-1 bg-[#FF8C42] text-white text-sm font-semibold rounded-full'>
+                            {performance.event_name}
+                          </span>
+                        )}
+                      </div>
+                      {performance.social_link && (
+                        <a
+                          href={performance.social_link}
+                          target='_blank'
+                          rel='noopener noreferrer'
+                          className='inline-block text-[#FF8C42] hover:text-[#ff7a2e] transition-colors text-sm font-semibold underline'
+                        >
+                          Event Page →
+                        </a>
+                      )}
                       <div className='relative w-full pt-[56.25%] bg-[#1e3a5f] rounded-lg overflow-hidden border-2 border-[#FF8C42]'>
                         <iframe
                           className='absolute top-0 left-0 w-full h-full'

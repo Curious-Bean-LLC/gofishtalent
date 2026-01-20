@@ -94,7 +94,7 @@ const Home: React.FC = () => {
         {/* Fish with band images */}
         {musicians.map((musician, index) => (
           <div
-            key={musician.id}
+            key={musician.slug}
             className={`fish fish-${index + 1}`}
             onClick={() => handleFishClick(musician.route)}
           >
@@ -119,7 +119,7 @@ const Home: React.FC = () => {
       <div className='mt-8 flex flex-wrap justify-center gap-6'>
         {musicians.map((musician) => (
           <div
-            key={musician.id}
+            key={musician.slug}
             className='flex items-center gap-3 bg-orange-100 px-4 py-2 rounded-lg cursor-pointer hover:bg-[#FF8C42] hover:text-white transition-colors border-2 border-[#FF8C42]'
             onClick={() => handleFishClick(musician.route)}
           >
