@@ -99,7 +99,11 @@ const Tickets: React.FC = () => {
                 <div className='space-y-2'>
                   {show.date && (
                     <p className='text-[#1e3a5f] font-bold text-lg'>
-                      {show.date}
+                      {new Date(show.date).toLocaleDateString(undefined, {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric',
+                      })}
                     </p>
                   )}
                   {show.eventName && (
