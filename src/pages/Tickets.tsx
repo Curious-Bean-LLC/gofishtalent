@@ -21,7 +21,7 @@ const Tickets: React.FC = () => {
   const handleFilterChange = (slug: string) => {
     // Collapse all rows when filter changes
     setExpandedRows(new Set())
-    
+
     if (slug === 'all') {
       setSearchParams({})
     } else {
