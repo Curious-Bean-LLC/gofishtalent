@@ -74,6 +74,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'M_PLUS_2';
+  src: url('/assets/fonts/M_PLUS_2/MPLUS2-VariableFont_wght.ttf')
+    format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
 .font-bangers {
   font-family: 'Bangers', sans-serif;
 }
@@ -116,27 +124,38 @@
   font-family: 'ZCOOL_KuaiLe', sans-serif;
 }
 
+.font-m-plus-2 {
+  font-family: 'M_PLUS_2', sans-serif;
+}
+
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
   color-scheme: light;
-  color: #1e3a5f;
-  background-color: #fff8e7;
+  color: var(--dark);
+  background-color: var(--light);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary: #ff8c42;
+  --secondary: #2a5a8a;
+  --tertiary: #1e3a5f;
+  --light: #fff8e7;
+  --dark: #1e3a5f;
+  --white: #ffffff;
 }
 
 body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  font-family: 'PT_Sans_Caption', sans-serif;
-  background-color: #fff8e7;
+  font-family: 'M_PLUS_2', sans-serif;
+  background-color: var(--light);
 }
 
 h1,
@@ -150,9 +169,7 @@ h6 {
 
 .external-link {
   text-decoration: underline;
-  text-decoration-style: wavy;
-  color: #ff8c42;
-  font-weight: 600;
+  color: var(--primary);
 }
 
 .songkick-widget {

@@ -55,10 +55,10 @@ const TalentEPK: React.FC = () => {
   if (!musician) {
     return (
       <div className='max-w-7xl mx-auto px-8 py-12 text-center min-h-[calc(100vh-5rem)]'>
-        <h1 className='text-4xl font-bold text-white mb-4'>Artist Not Found</h1>
+        <h1 className='text-4xl font-bold text-[var(--white)] mb-4'>Artist Not Found</h1>
         <button
           onClick={() => navigate('/')}
-          className='px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-colors'
+          className='px-6 py-3 bg-indigo-600 text-[var(--white)] rounded-lg hover:bg-indigo-700 transition-colors'
         >
           Back to Home
         </button>
@@ -72,7 +72,7 @@ const TalentEPK: React.FC = () => {
       {fromHome && (
         <button
           onClick={() => navigate('/')}
-          className='flex items-center gap-2 text-[#2a5a8a] hover:text-[#FF8C42] transition-colors mb-8'
+          className='flex items-center gap-2 text-[var(--secondary)] hover:text-[var(--primary)] transition-colors mb-8'
         >
           <FaArrowLeft />
           <span>Back to Pond</span>
@@ -80,39 +80,80 @@ const TalentEPK: React.FC = () => {
       )}
 
       {/* Hero Section */}
-      <div className='bg-orange-50 rounded-2xl p-8 mb-8 border-2 border-[#FF8C42]'>
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-8 items-center'>
-          {/* Cover Image */}
+      <div className='mb-8 space-y-6'>
+        {/* Artist Info Row - Centered */}
+        <div className='text-center'>
+          <h1
+            className={`text-6xl max-md:text-4xl font-bold text-[var(--tertiary)] mb-3 ${musician.fontClass}`}
+          >
+            {musician.name}
+          </h1>
+          <p className='text-2xl max-md:text-xl text-[var(--secondary)] mb-2'>
+            {musician.genre}
+          </p>
+          <p className='text-lg text-[var(--secondary)]'>
+            {musician.location}
+          </p>
+        </div>
+
+        {/* Image Gallery Row */}
+        <div className={`grid grid-cols-1 gap-4 ${musician.isCoverImageSquare !== false ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
+          {/* Main Image */}
           <div className='rounded-xl overflow-hidden shadow-2xl'>
             <img
               src={musician.image}
               alt={musician.name}
-              className='w-full object-cover'
+              className='w-full h-full object-cover'
             />
           </div>
 
-          {/* Artist Info */}
-          <div className='space-y-6'>
-            <div>
-              <h1
-                className={`text-6xl max-md:text-4xl font-bold text-[#1e3a5f] mb-3 ${musician.fontClass}`}
-              >
-                {musician.name}
-              </h1>
-              <p className='text-2xl max-md:text-xl text-[#2a5a8a] mb-2'>
-                {musician.genre}
-              </p>
-              <p className='text-lg text-[#2a5a8a]'>{musician.location}</p>
-
-              <div className='mt-4'>
-                <button
-                  onClick={() => navigate(`/tickets?artist=${slug}`)}
-                  className='px-6 py-3 bg-[#FF8C42] hover:bg-[#ff7a2e] text-white font-bold rounded-lg transition-colors shadow-md inline-flex items-center gap-2'
+          {/* Additional Images Grid - 2x2 grid */}
+          <div className={`grid grid-cols-2 gap-4 ${musician.isCoverImageSquare !== false ? '' : 'md:col-span-2'}`}>
+            {musician.galleryImages && musician.galleryImages.length > 0 ? (
+              musician.galleryImages.map((img, index) => (
+                <div
+                  key={index}
+                  className='rounded-lg overflow-hidden shadow-lg aspect-square'
                 >
-                  <span>View Upcoming Shows</span>
-                </button>
-              </div>
-            </div>
+                  <img
+                    src={img}
+                    alt={`${musician.name} ${index + 2}`}
+                    className='w-full h-full object-cover'
+                  />
+                </div>
+              ))
+            ) : (
+              <>
+                <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+                  <img
+                    src={musician.image}
+                    alt={`${musician.name} 2`}
+                    className='w-full h-full object-cover opacity-50'
+                  />
+                </div>
+                <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+                  <img
+                    src={musician.image}
+                    alt={`${musician.name} 3`}
+                    className='w-full h-full object-cover opacity-50'
+                  />
+                </div>
+                <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+                  <img
+                    src={musician.image}
+                    alt={`${musician.name} 4`}
+                    className='w-full h-full object-cover opacity-50'
+                  />
+                </div>
+                <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+                  <img
+                    src={musician.image}
+                    alt={`${musician.name} 5`}
+                    className='w-full h-full object-cover opacity-50'
+                  />
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
@@ -121,27 +162,27 @@ const TalentEPK: React.FC = () => {
         {/* Main Content */}
         <div className='lg:col-span-2 space-y-8'>
           {/* Bio Section */}
-          <div className='bg-orange-50 rounded-xl p-6 border-2 border-[#FF8C42]'>
-            <h2 className='text-3xl font-bold text-[#1e3a5f] mb-4'>
+          <div>
+            <h2 className='text-3xl font-bold text-[var(--tertiary)] mb-4'>
               Biography
             </h2>
-            <p className='text-[#2a5a8a] leading-relaxed text-lg'>
+            <p className='text-[var(--secondary)] leading-relaxed text-lg'>
               {musician.bio}
             </p>
           </div>
 
           {/* Highlights Section */}
-          <div className='bg-orange-50 rounded-xl p-6 border-2 border-[#FF8C42]'>
-            <h2 className='text-3xl font-bold text-[#1e3a5f] mb-4'>
+          <div>
+            <h2 className='text-3xl font-bold text-[var(--tertiary)] mb-4'>
               Career Highlights
             </h2>
             <ul className='space-y-3'>
               {musician.highlights.map((highlight, index) => (
                 <li
                   key={index}
-                  className='flex items-start gap-3 text-[#2a5a8a]'
+                  className='flex items-start gap-3 text-[var(--secondary)]'
                 >
-                  <span className='text-[#FF8C42] text-xl mt-1'>✦</span>
+                  <span className='text-[var(--primary)] text-xl mt-1'>✦</span>
                   <span className='text-lg'>{highlight}</span>
                 </li>
               ))}
@@ -150,26 +191,26 @@ const TalentEPK: React.FC = () => {
 
           {/* Press Coverage Section */}
           {musician.pressCoverage && musician.pressCoverage.length > 0 && (
-            <div className='bg-orange-50 rounded-xl p-6 border-2 border-[#FF8C42]'>
-              <h2 className='text-3xl font-bold text-[#1e3a5f] mb-4'>
+            <div>
+              <h2 className='text-3xl font-bold text-[var(--tertiary)] mb-4'>
                 Press Coverage
               </h2>
               <div className='space-y-4'>
                 {musician.pressCoverage.map((press, index) => (
                   <div
                     key={index}
-                    className='bg-white rounded-lg p-5 border-2 border-orange-200 hover:border-[#FF8C42] transition-colors'
+                    className='bg-[var(--white)] rounded-lg p-5 border-2 border-orange-200 hover:border-[var(--primary)] transition-colors'
                   >
                     <a
                       href={press.url}
                       target='_blank'
                       rel='noopener noreferrer'
-                      className='text-xl font-semibold text-[#FF8C42] hover:text-[#1e3a5f] transition-colors block mb-2'
+                      className='text-xl font-semibold text-[var(--primary)] hover:text-[var(--tertiary)] transition-colors block mb-2'
                     >
                       {press.title} →
                     </a>
                     {press.quote && (
-                      <blockquote className='text-[#2a5a8a] italic border-l-4 border-[#FF8C42] pl-4 mt-3'>
+                      <blockquote className='text-[var(--secondary)] italic border-l-4 border-[var(--primary)] pl-4 mt-3'>
                         "{press.quote}"
                       </blockquote>
                     )}
@@ -180,15 +221,15 @@ const TalentEPK: React.FC = () => {
           )}
 
           {/* Influences Section */}
-          <div className='bg-orange-50 rounded-xl p-6 border-2 border-[#FF8C42]'>
-            <h2 className='text-3xl font-bold text-[#1e3a5f] mb-4'>
+          <div>
+            <h2 className='text-3xl font-bold text-[var(--tertiary)] mb-4'>
               Influences
             </h2>
             <div className='flex flex-wrap gap-3'>
               {musician.influences.map((influence, index) => (
                 <span
                   key={index}
-                  className='px-4 py-2 bg-white rounded-full text-[#2a5a8a] border-2 border-orange-200 hover:border-[#FF8C42] transition-colors'
+                  className='px-4 py-2 bg-[var(--white)] rounded-full text-[var(--secondary)] border-2 border-orange-200 hover:border-[var(--primary)] transition-colors'
                 >
                   {influence}
                 </span>
@@ -198,25 +239,25 @@ const TalentEPK: React.FC = () => {
 
           {/* Available Sets Section */}
           {musician.sets && musician.sets.length > 0 && (
-            <div className='bg-orange-50 rounded-xl p-6 border-2 border-[#FF8C42]'>
-              <h2 className='text-3xl font-bold text-[#1e3a5f] mb-4'>
+            <div>
+              <h2 className='text-3xl font-bold text-[var(--tertiary)] mb-4'>
                 Available Sets
               </h2>
               <div className='space-y-4'>
                 {musician.sets.map((set, index) => (
                   <div
                     key={index}
-                    className='bg-white rounded-lg p-5 border-2 border-orange-200'
+                    className='bg-[var(--white)] rounded-lg p-5 border-2 border-orange-200'
                   >
                     <div className='flex items-start justify-between gap-4 mb-2'>
-                      <h3 className='text-xl font-bold text-[#1e3a5f]'>
+                      <h3 className='text-xl font-bold text-[var(--tertiary)]'>
                         {set.name}
                       </h3>
-                      <span className='text-[#FF8C42] font-semibold whitespace-nowrap'>
+                      <span className='text-[var(--primary)] font-semibold whitespace-nowrap'>
                         {set.duration}
                       </span>
                     </div>
-                    <p className='text-[#2a5a8a] leading-relaxed'>
+                    <p className='text-[var(--secondary)] leading-relaxed'>
                       {set.description}
                     </p>
                   </div>
@@ -227,8 +268,8 @@ const TalentEPK: React.FC = () => {
 
           {/* Performances Section */}
           {musician.performances && musician.performances.length > 0 && (
-            <div className='bg-orange-50 rounded-xl p-6 border-2 border-[#FF8C42]'>
-              <h2 className='text-3xl font-bold text-[#1e3a5f] mb-4'>
+            <div>
+              <h2 className='text-3xl font-bold text-[var(--tertiary)] mb-4'>
                 Performances
               </h2>
               <div className='space-y-6'>
@@ -247,12 +288,12 @@ const TalentEPK: React.FC = () => {
                     <div key={index} className='space-y-2'>
                       <div className='flex items-start justify-between gap-4 flex-wrap'>
                         <h3
-                          className={`${musician.fontClass} text-xl font-semibold text-[#1e3a5f]`}
+                          className={`${musician.fontClass} text-xl font-semibold text-[var(--tertiary)]`}
                         >
                           {performance.title}
                         </h3>
                         {performance.event_name && (
-                          <span className='px-3 py-1 bg-[#FF8C42] text-white text-sm font-semibold rounded-full'>
+                          <span className='px-3 py-1 bg-[var(--primary)] text-[var(--white)] text-sm font-semibold rounded-full'>
                             {performance.event_name}
                           </span>
                         )}
@@ -262,12 +303,12 @@ const TalentEPK: React.FC = () => {
                           href={performance.social_link}
                           target='_blank'
                           rel='noopener noreferrer'
-                          className='inline-block text-[#FF8C42] hover:text-[#ff7a2e] transition-colors text-sm font-semibold underline'
+                          className='inline-block text-[var(--primary)] hover:text-[#ff7a2e] transition-colors text-sm font-semibold underline'
                         >
                           Event Page →
                         </a>
                       )}
-                      <div className='relative w-full pt-[56.25%] bg-[#1e3a5f] rounded-lg overflow-hidden border-2 border-[#FF8C42]'>
+                      <div className='relative w-full pt-[56.25%] bg-[var(--tertiary)] rounded-lg overflow-hidden border-2 border-[var(--primary)]'>
                         <iframe
                           className='absolute top-0 left-0 w-full h-full'
                           src={getEmbedUrl(performance.youtubeUrl)}
@@ -288,14 +329,16 @@ const TalentEPK: React.FC = () => {
         {/* Sidebar */}
         <div className='space-y-6'>
           {/* Social Links */}
-          <div className='bg-orange-50 rounded-xl p-6 border-2 border-[#FF8C42]'>
-            <h2 className='text-2xl font-bold text-[#1e3a5f] mb-4'>Connect</h2>
+          <div>
+            <h2 className='text-2xl font-bold text-[var(--tertiary)] mb-4'>
+              Connect
+            </h2>
             <div className='space-y-3'>
               <a
                 href={musician.socialLinks.spotify}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition-colors text-white'
+                className='flex items-center gap-3 px-4 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition-colors text-[var(--white)]'
               >
                 <FaSpotify size={24} />
                 <span className='font-semibold'>Listen on Spotify</span>
@@ -304,7 +347,7 @@ const TalentEPK: React.FC = () => {
                 href={musician.socialLinks.bandcamp}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-lg transition-colors text-white'
+                className='flex items-center gap-3 px-4 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-lg transition-colors text-[var(--white)]'
               >
                 <FaBandcamp size={24} />
                 <span className='font-semibold'>Support on Bandcamp</span>
@@ -313,7 +356,7 @@ const TalentEPK: React.FC = () => {
                 href={musician.socialLinks.soundcloud}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-orange-600 hover:bg-orange-700 rounded-lg transition-colors text-white'
+                className='flex items-center gap-3 px-4 py-3 bg-orange-600 hover:bg-orange-700 rounded-lg transition-colors text-[var(--white)]'
               >
                 <FaSoundcloud size={24} />
                 <span className='font-semibold'>Stream on SoundCloud</span>
@@ -322,7 +365,7 @@ const TalentEPK: React.FC = () => {
                 href={musician.socialLinks.youtube}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-red-600 hover:bg-red-700 rounded-lg transition-colors text-white'
+                className='flex items-center gap-3 px-4 py-3 bg-red-600 hover:bg-red-700 rounded-lg transition-colors text-[var(--white)]'
               >
                 <FaYoutube size={24} />
                 <span className='font-semibold'>Watch on YouTube</span>
@@ -331,7 +374,7 @@ const TalentEPK: React.FC = () => {
                 href={musician.socialLinks.instagram}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg transition-colors text-white'
+                className='flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg transition-colors text-[var(--white)]'
               >
                 <FaInstagram size={24} />
                 <span className='font-semibold'>Follow on Instagram</span>
@@ -340,7 +383,7 @@ const TalentEPK: React.FC = () => {
                 href={musician.socialLinks.website}
                 target='_blank'
                 rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors text-white'
+                className='flex items-center gap-3 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors text-[var(--white)]'
               >
                 <FaGlobe size={24} />
                 <span className='font-semibold'>Visit Website</span>
@@ -348,12 +391,18 @@ const TalentEPK: React.FC = () => {
             </div>
 
             {/* Contact Button */}
-            <div className='mt-6 pt-6 border-t-2 border-orange-200'>
+            <div className='mt-6 pt-6 border-t-2 border-orange-200 space-y-3'>
               <button
                 onClick={() => navigate('/contact')}
-                className='w-full px-4 py-3 bg-[#FF8C42] hover:bg-[#ff7a2e] rounded-lg transition-colors text-white font-semibold shadow-md'
+                className='w-full px-4 py-3 bg-[var(--primary)] hover:bg-[#ff7a2e] rounded-lg transition-colors text-[var(--white)] font-semibold shadow-md'
               >
                 Book This Artist
+              </button>
+              <button
+                onClick={() => navigate(`/tickets?artist=${slug}`)}
+                className='w-full px-4 py-3 bg-[var(--secondary)] hover:bg-[var(--tertiary)] rounded-lg transition-colors text-[var(--white)] font-semibold shadow-md'
+              >
+                View Upcoming Shows
               </button>
             </div>
           </div>
@@ -374,7 +423,7 @@ const TalentEPK: React.FC = () => {
           )}
 
           {/* Songkick Widget */}
-          {musician.songkickArtistId &&
+          {/* {musician.songkickArtistId &&
             musician.songkickArtistId.trim() !== '' &&
             musician.songkickArtistId !== 'YOUR_SONGKICK_ARTIST_ID' && (
               <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
@@ -400,7 +449,7 @@ const TalentEPK: React.FC = () => {
                   // style='display: none;'
                 ></a>
               </div>
-            )}
+            )} */}
         </div>
       </div>
     </div>
