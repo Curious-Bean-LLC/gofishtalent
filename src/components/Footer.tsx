@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { FaInstagram } from 'react-icons/fa'
 
 const Footer = () => {
   return (
@@ -48,14 +49,14 @@ const Footer = () => {
           </nav>
 
           {/* Social Links */}
-          <div className='text-[var(--secondary)] text-sm'>
+          <div className='text-[var(--secondary)] text-xl'>
             <a
               href='https://www.instagram.com/gofishtalent'
               target='_blank'
               rel='noopener noreferrer'
-              className='hover:text-[var(--primary)] transition-colors underline decoration-transparent hover:decoration-[var(--primary)]'
+              className='hover:text-[var(--primary)] transition-colors'
             >
-              Instagram
+              <FaInstagram />
             </a>
           </div>
         </div>
