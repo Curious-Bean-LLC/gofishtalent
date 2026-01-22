@@ -64,7 +64,7 @@ const Tickets: React.FC = () => {
             <button
               key={musician.slug}
               onClick={() => handleFilterChange(musician.slug)}
-              className={`px-4 py-2 rounded-lg font-semibold transition-all ${
+              className={`px-4 py-2 rounded-lg font-semibold transition-all ${musician.fontClass} ${
                 artistFilter === musician.slug
                   ? 'bg-[var(--primary)] text-[var(--white)] shadow-md'
                   : 'bg-orange-100 text-[var(--secondary)] hover:bg-orange-200 border-2 border-orange-200'
