@@ -55,7 +55,9 @@ const TalentEPK: React.FC = () => {
   if (!musician) {
     return (
       <div className='max-w-7xl mx-auto px-8 py-12 text-center min-h-[calc(100vh-5rem)]'>
-        <h1 className='text-4xl font-bold text-[var(--white)] mb-4'>Artist Not Found</h1>
+        <h1 className='text-4xl font-bold text-[var(--white)] mb-4'>
+          Artist Not Found
+        </h1>
         <button
           onClick={() => navigate('/')}
           className='px-6 py-3 bg-indigo-600 text-[var(--white)] rounded-lg hover:bg-indigo-700 transition-colors'
@@ -91,13 +93,13 @@ const TalentEPK: React.FC = () => {
           <p className='text-2xl max-md:text-xl text-[var(--secondary)] mb-2'>
             {musician.genre}
           </p>
-          <p className='text-lg text-[var(--secondary)]'>
-            {musician.location}
-          </p>
+          <p className='text-lg text-[var(--secondary)]'>{musician.location}</p>
         </div>
 
         {/* Image Gallery Row */}
-        <div className={`grid grid-cols-1 gap-4 ${musician.isCoverImageSquare !== false ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
+        <div
+          className={`grid grid-cols-1 gap-4 ${musician.isCoverImageSquare !== false ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}
+        >
           {/* Main Image */}
           <div className='rounded-xl overflow-hidden shadow-2xl'>
             <img
@@ -108,7 +110,9 @@ const TalentEPK: React.FC = () => {
           </div>
 
           {/* Additional Images Grid - 2x2 grid */}
-          <div className={`grid grid-cols-2 gap-4 ${musician.isCoverImageSquare !== false ? '' : 'md:col-span-2'}`}>
+          <div
+            className={`grid grid-cols-2 gap-4 ${musician.isCoverImageSquare !== false ? '' : 'md:col-span-2'}`}
+          >
             {musician.galleryImages && musician.galleryImages.length > 0 ? (
               musician.galleryImages.map((img, index) => (
                 <div
@@ -180,9 +184,11 @@ const TalentEPK: React.FC = () => {
               {musician.highlights.map((highlight, index) => (
                 <li
                   key={index}
-                  className='flex items-start gap-3 text-[var(--secondary)]'
+                  className='flex items-center gap-3 text-[var(--secondary)]'
                 >
-                  <span className='text-[var(--primary)] text-xl mt-1'>✦</span>
+                  <span className='text-[var(--primary)] text-xl flex-shrink-0'>
+                    ✦
+                  </span>
                   <span className='text-lg'>{highlight}</span>
                 </li>
               ))}
@@ -334,60 +340,72 @@ const TalentEPK: React.FC = () => {
               Connect
             </h2>
             <div className='space-y-3'>
-              <a
-                href={musician.socialLinks.spotify}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition-colors text-[var(--white)]'
-              >
-                <FaSpotify size={24} />
-                <span className='font-semibold'>Listen on Spotify</span>
-              </a>
-              <a
-                href={musician.socialLinks.bandcamp}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-lg transition-colors text-[var(--white)]'
-              >
-                <FaBandcamp size={24} />
-                <span className='font-semibold'>Support on Bandcamp</span>
-              </a>
-              <a
-                href={musician.socialLinks.soundcloud}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-orange-600 hover:bg-orange-700 rounded-lg transition-colors text-[var(--white)]'
-              >
-                <FaSoundcloud size={24} />
-                <span className='font-semibold'>Stream on SoundCloud</span>
-              </a>
-              <a
-                href={musician.socialLinks.youtube}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-red-600 hover:bg-red-700 rounded-lg transition-colors text-[var(--white)]'
-              >
-                <FaYoutube size={24} />
-                <span className='font-semibold'>Watch on YouTube</span>
-              </a>
-              <a
-                href={musician.socialLinks.instagram}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg transition-colors text-[var(--white)]'
-              >
-                <FaInstagram size={24} />
-                <span className='font-semibold'>Follow on Instagram</span>
-              </a>
-              <a
-                href={musician.socialLinks.website}
-                target='_blank'
-                rel='noopener noreferrer'
-                className='flex items-center gap-3 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors text-[var(--white)]'
-              >
-                <FaGlobe size={24} />
-                <span className='font-semibold'>Visit Website</span>
-              </a>
+              {musician.socialLinks.spotify && (
+                <a
+                  href={musician.socialLinks.spotify}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-center gap-3 px-4 py-3 bg-green-600 hover:bg-green-700 rounded-lg transition-colors text-[var(--white)]'
+                >
+                  <FaSpotify size={24} />
+                  <span className='font-semibold'>Listen on Spotify</span>
+                </a>
+              )}
+              {musician.socialLinks.bandcamp && (
+                <a
+                  href={musician.socialLinks.bandcamp}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-center gap-3 px-4 py-3 bg-cyan-600 hover:bg-cyan-700 rounded-lg transition-colors text-[var(--white)]'
+                >
+                  <FaBandcamp size={24} />
+                  <span className='font-semibold'>Support on Bandcamp</span>
+                </a>
+              )}
+              {musician.socialLinks.soundcloud && (
+                <a
+                  href={musician.socialLinks.soundcloud}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-center gap-3 px-4 py-3 bg-orange-600 hover:bg-orange-700 rounded-lg transition-colors text-[var(--white)]'
+                >
+                  <FaSoundcloud size={24} />
+                  <span className='font-semibold'>Stream on SoundCloud</span>
+                </a>
+              )}
+              {musician.socialLinks.youtube && (
+                <a
+                  href={musician.socialLinks.youtube}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-center gap-3 px-4 py-3 bg-red-600 hover:bg-red-700 rounded-lg transition-colors text-[var(--white)]'
+                >
+                  <FaYoutube size={24} />
+                  <span className='font-semibold'>Watch on YouTube</span>
+                </a>
+              )}
+              {musician.socialLinks.instagram && (
+                <a
+                  href={musician.socialLinks.instagram}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-center gap-3 px-4 py-3 bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 rounded-lg transition-colors text-[var(--white)]'
+                >
+                  <FaInstagram size={24} />
+                  <span className='font-semibold'>Follow on Instagram</span>
+                </a>
+              )}
+              {musician.socialLinks.website && (
+                <a
+                  href={musician.socialLinks.website}
+                  target='_blank'
+                  rel='noopener noreferrer'
+                  className='flex items-center gap-3 px-4 py-3 bg-indigo-600 hover:bg-indigo-700 rounded-lg transition-colors text-[var(--white)]'
+                >
+                  <FaGlobe size={24} />
+                  <span className='font-semibold'>Visit Website</span>
+                </a>
+              )}
             </div>
 
             {/* Contact Button */}

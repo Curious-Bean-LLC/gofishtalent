@@ -75,6 +75,8 @@ export const musicians: Musician[] = [
     location: 'Milwaukee, WI',
     influences: ['David Bowie', 'Björk', 'Tame Impala', 'Kate Bush'],
     highlights: [
+      'EP release show with 75+ attendees',
+      'Single "LVL 5" featured on 88nine Milwaukee Music Friday',
       'Hosted a holiday special with over 50 attendees and moving $1k in ticket sales',
     ],
     sets: [
@@ -152,7 +154,10 @@ export const musicians: Musician[] = [
       'Frank Ocean',
     ],
     highlights: [
-      'Invited to perform at the Cactus Club (Milwaukee, WI) on more than one occasion',
+      'Headlined Black August Block Party in Oakland, CA',
+      'Completed in D1 cheerleading at a big 10 university',
+      'Performed upon invitation at Cactus Club in Milwaukee, WI on four separate occasions',
+      'Contributors to many contracted and collaborative modeling projects',
     ],
     sets: [
       {
@@ -176,20 +181,19 @@ export const musicians: Musician[] = [
       soundcloud: 'https://soundcloud.com/adriennexash',
       youtube: 'https://youtube.com/@adriennexash',
     },
-    songkickArtistId: 'YOUR_SONGKICK_ARTIST_ID', // Replace with actual Songkick artist ID
+    songkickArtistId: '',
     performances: [
       {
         title: 'Live Performance',
         youtubeUrl: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ', // Replace with actual video
       },
     ],
-    pressCoverage: [
-      // {
-      //   title: 'Press Feature',
-      //   url: 'https://example.com/article',
-      //   quote: 'Twin vocal powerhouses with an unmistakable chemistry.',
-      // },
-    ],
+    // pressCoverage: [
+    //   {
+    //     title: 'Headlined Black August Block Party in Oakland, CA',
+    //     url: 'https://www.instagram.com/reel/CwbEnrrJuuB/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==',
+    //   },
+    // ],
   },
   {
     slug: 'modern-haunting',
@@ -205,7 +209,11 @@ export const musicians: Musician[] = [
     bio: 'Modern Haunting is a Paranormal Dance Rock band in Green Bay, Wisconsin. Fronted by Charlie Devillers, the project kicked off in 2022 after returning from his stint studying music in Nashville. Modern Haunting leads with driving synths, dance rock instrumentals, and vocals that follow the haunted vibe - sometimes like a classic 80s thriller, other times lyrically capturing the haunt of reality. Performances build on the recorded tracks fitting the energy of any room, making each set unique. The community Modern Haunting brings is passionate about a good bit, good music, and a new release every Friday the 13th.',
     location: 'Green Bay, WI',
     influences: ['The Killers', 'CHVRCHES', 'Depeche Mode', 'New Order'],
-    highlights: ['3x BAMMY Award Winner'],
+    highlights: [
+      'BAMMY awards for song of the year, rock artist of the year, breakthrough artist of the year',
+      'arranged and performed music for UWGB production of Vinegar Tom (it’s a play about witches)',
+      'played GBUFO Invasion Fest',
+    ],
     sets: [
       {
         name: 'Originals - Solo',
