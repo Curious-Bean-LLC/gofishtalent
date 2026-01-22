@@ -7,6 +7,10 @@ import FAGallery1 from '../../assets/images/epks/fa-bob-may2025.JPG'
 import FAGallery2 from '../../assets/images/epks/fa-buggy-planet.JPEG'
 import FAGallery3 from '../../assets/images/epks/fa-faklandia-may2025.jpg'
 import FAGallery4 from '../../assets/images/epks/fa-galaxy.png'
+import MHGallery1 from '../../assets/images/epks/mh-eiding-7.jpg'
+import MHGallery2 from '../../assets/images/epks/mh-eiding-8.jpg'
+import MHGallery3 from '../../assets/images/epks/mh-houle.jpg'
+import MHGallery4 from '../../assets/images/epks/mh-orozco.jpg'
 
 export interface Musician {
   slug: string
@@ -186,6 +190,7 @@ export const musicians: Musician[] = [
     genre: 'Paranormal dance rock',
     color: '#ffe66d',
     image: MHCover,
+    galleryImages: [MHGallery1, MHGallery3, MHGallery4, MHGallery2],
     fontClass: 'font-bangers',
     route: '/talent/modern-haunting',
     bio: 'Modern Haunting is a Paranormal Dance Rock band in Green Bay, Wisconsin. Fronted by Charlie Devillers, the project kicked off in 2022 after returning from his stint studying music in Nashville. Modern Haunting leads with driving synths, dance rock instrumentals, and vocals that follow the haunted vibe - sometimes like a classic 80s thriller, other times lyrically capturing the haunt of reality. Performances build on the recorded tracks fitting the energy of any room, making each set unique. The community Modern Haunting brings is passionate about a good bit, good music, and a new release every Friday the 13th.',
