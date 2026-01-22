@@ -407,7 +407,7 @@ const TalentEPK: React.FC = () => {
           )}
 
           {/* Songkick Widget */}
-          {musician.songkickArtistId &&
+          {/* {musician.songkickArtistId &&
             musician.songkickArtistId.trim() !== '' &&
             musician.songkickArtistId !== 'YOUR_SONGKICK_ARTIST_ID' && (
               <div className='bg-gray-800/50 rounded-xl p-6 border border-gray-700'>
@@ -433,7 +433,7 @@ const TalentEPK: React.FC = () => {
                   // style='display: none;'
                 ></a>
               </div>
-            )}
+            )} */}
         </div>
       </div>
     </div>
