@@ -11,12 +11,17 @@ import MHGallery1 from '../../assets/images/epks/mh-eiding-7.jpg'
 import MHGallery2 from '../../assets/images/epks/mh-eiding-8.jpg'
 import MHGallery3 from '../../assets/images/epks/mh-houle.jpg'
 import MHGallery4 from '../../assets/images/epks/mh-orozco.jpg'
+import AXAGallery1 from '../../assets/images/epks/axa-bw-straighton.jpg'
+import AXAGallery2 from '../../assets/images/epks/axa-fall.jpg'
+import AXAGallery3 from '../../assets/images/epks/axa-fa-release.png'
+import AXAGallery4 from '../../assets/images/epks/axa-shoulder-lay.jpg'
 
 export interface Musician {
   slug: string
   logo: string
   image: string
   galleryImages?: string[]
+  isCoverImageSquare?: boolean
   name: string
   genre: string
   color: string
@@ -63,6 +68,7 @@ export const musicians: Musician[] = [
     color: '#ff6b6b',
     image: FACover,
     galleryImages: [FAGallery1, FAGallery2, FAGallery3, FAGallery4],
+    isCoverImageSquare: true,
     fontClass: 'font-zcool-kuaile',
     route: '/talent/fairy-astronaut',
     bio: 'Fairy Astronaut is a Psychedelic Artpop Duo in Milwaukee, Wisconsin. Fronted by Brady Wayne- multi instrumentalist, producer, and McKenzie Van Oss- vocalist, multi instrumentalist, and former professional ballet dancer, stars collide to blast you off into a new dimension. The twink glam pair are originally from Green Bay, Wisconsin, and met in the Spring of 2024, where immediately a supernova was born. Quickly moving to Milwaukee later that fall, they began to shake things up leaving audiences with questions such as, “What is going on here?” and “Is this Performance Art? A Synth Wizard Battle? A Dance Party?” But what you really should be asking is, “Are we Human, or are we Fairy Astronaut?” and the answer is always, “Who Cares.”',
@@ -131,6 +137,8 @@ export const musicians: Musician[] = [
     genre: 'Vocal pop duo',
     color: '#4ecdc4',
     image: AXACover,
+    galleryImages: [AXAGallery1, AXAGallery2, AXAGallery3, AXAGallery4],
+    isCoverImageSquare: false,
     fontClass: 'font-rock-salt',
     route: '/talent/adriennexash',
     bio: 'Adrienne & Ash are identical twins, slaying the stage and serving looks ever since they can remember. They have an unsurprising natural talent to create smooth sounds together, whether they’re performing covers or delivering original tunes. Transcending genres, they spread their wings around pop, alternative, & soulful music with their uniquely ethereal, edgy, & maximalist vibe that can only ring in as authentically themselves.',
@@ -191,6 +199,7 @@ export const musicians: Musician[] = [
     color: '#ffe66d',
     image: MHCover,
     galleryImages: [MHGallery1, MHGallery3, MHGallery4, MHGallery2],
+    isCoverImageSquare: true,
     fontClass: 'font-bangers',
     route: '/talent/modern-haunting',
     bio: 'Modern Haunting is a Paranormal Dance Rock band in Green Bay, Wisconsin. Fronted by Charlie Devillers, the project kicked off in 2022 after returning from his stint studying music in Nashville. Modern Haunting leads with driving synths, dance rock instrumentals, and vocals that follow the haunted vibe - sometimes like a classic 80s thriller, other times lyrically capturing the haunt of reality. Performances build on the recorded tracks fitting the energy of any room, making each set unique. The community Modern Haunting brings is passionate about a good bit, good music, and a new release every Friday the 13th.',

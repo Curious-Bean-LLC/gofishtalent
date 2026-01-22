@@ -97,8 +97,8 @@ const TalentEPK: React.FC = () => {
         </div>
 
         {/* Image Gallery Row */}
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-          {/* Main Image - Takes up 50% */}
+        <div className={`grid grid-cols-1 gap-4 ${musician.isCoverImageSquare !== false ? 'md:grid-cols-2' : 'md:grid-cols-3'}`}>
+          {/* Main Image */}
           <div className='rounded-xl overflow-hidden shadow-2xl'>
             <img
               src={musician.image}
@@ -107,8 +107,8 @@ const TalentEPK: React.FC = () => {
             />
           </div>
 
-          {/* Additional Images Grid - 2x2 grid taking up 50% */}
-          <div className='grid grid-cols-2 gap-4'>
+          {/* Additional Images Grid - 2x2 grid */}
+          <div className={`grid grid-cols-2 gap-4 ${musician.isCoverImageSquare !== false ? '' : 'md:col-span-2'}`}>
             {musician.galleryImages && musician.galleryImages.length > 0 ? (
               musician.galleryImages.map((img, index) => (
                 <div
