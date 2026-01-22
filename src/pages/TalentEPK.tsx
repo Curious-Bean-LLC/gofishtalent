@@ -109,35 +109,51 @@ const TalentEPK: React.FC = () => {
 
           {/* Additional Images Grid - 2x2 grid taking up 50% */}
           <div className='grid grid-cols-2 gap-4'>
-            {/* Placeholder for additional images - can be added to musician data later */}
-            <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
-              <img
-                src={musician.image}
-                alt={`${musician.name} 2`}
-                className='w-full h-full object-cover opacity-50'
-              />
-            </div>
-            <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
-              <img
-                src={musician.image}
-                alt={`${musician.name} 3`}
-                className='w-full h-full object-cover opacity-50'
-              />
-            </div>
-            <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
-              <img
-                src={musician.image}
-                alt={`${musician.name} 4`}
-                className='w-full h-full object-cover opacity-50'
-              />
-            </div>
-            <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
-              <img
-                src={musician.image}
-                alt={`${musician.name} 5`}
-                className='w-full h-full object-cover opacity-50'
-              />
-            </div>
+            {musician.galleryImages && musician.galleryImages.length > 0 ? (
+              musician.galleryImages.map((img, index) => (
+                <div
+                  key={index}
+                  className='rounded-lg overflow-hidden shadow-lg aspect-square'
+                >
+                  <img
+                    src={img}
+                    alt={`${musician.name} ${index + 2}`}
+                    className='w-full h-full object-cover'
+                  />
+                </div>
+              ))
+            ) : (
+              <>
+                <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+                  <img
+                    src={musician.image}
+                    alt={`${musician.name} 2`}
+                    className='w-full h-full object-cover opacity-50'
+                  />
+                </div>
+                <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+                  <img
+                    src={musician.image}
+                    alt={`${musician.name} 3`}
+                    className='w-full h-full object-cover opacity-50'
+                  />
+                </div>
+                <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+                  <img
+                    src={musician.image}
+                    alt={`${musician.name} 4`}
+                    className='w-full h-full object-cover opacity-50'
+                  />
+                </div>
+                <div className='rounded-lg overflow-hidden shadow-lg aspect-square bg-gray-200'>
+                  <img
+                    src={musician.image}
+                    alt={`${musician.name} 5`}
+                    className='w-full h-full object-cover opacity-50'
+                  />
+                </div>
+              </>
+            )}
           </div>
         </div>
       </div>
