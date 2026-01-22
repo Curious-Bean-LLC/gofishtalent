@@ -186,7 +186,9 @@ const TalentEPK: React.FC = () => {
                   key={index}
                   className='flex items-center gap-3 text-[var(--secondary)]'
                 >
-                  <span className='text-[var(--primary)] text-xl flex-shrink-0'>✦</span>
+                  <span className='text-[var(--primary)] text-xl flex-shrink-0'>
+                    ✦
+                  </span>
                   <span className='text-lg'>{highlight}</span>
                 </li>
               ))}
