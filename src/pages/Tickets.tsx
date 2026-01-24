@@ -127,7 +127,7 @@ const Tickets: React.FC = () => {
                   <div className='md:col-span-2 space-y-2'>
                     {show.date && (
                       <p className='text-[var(--tertiary)] font-bold text-xl'>
-                        {new Date(show.date).toLocaleDateString(undefined, {
+                        {new Date(show.date).toLocaleDateString('en-US', {
                           year: 'numeric',
                           month: 'long',
                           day: 'numeric',
@@ -169,7 +169,7 @@ const Tickets: React.FC = () => {
                       )
                     ) : (
                       <p className='text-[var(--secondary)] text-sm'>
-                        Tickets coming soon
+                        Tickets at the door
                       </p>
                     )}
                   </div>

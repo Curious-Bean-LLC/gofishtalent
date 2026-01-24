@@ -16,21 +16,21 @@ export interface Show {
 const fa_shows: Show[] = [
   {
     artistSlug: 'fairy-astronaut',
-    date: '2026-02-22',
+    date: '02-22-2026',
     venue: 'Unknown',
     location: 'Milwaukee, WI',
     isSoldOut: false,
   },
   {
     artistSlug: 'fairy-astronaut',
-    date: '2026-03-22',
+    date: '03-22-2026',
     venue: "Anodyne Walker's Point",
     location: 'Milwaukee, WI',
     isSoldOut: false,
   },
   {
     artistSlug: 'fairy-astronaut',
-    date: '2026-05-26',
+    date: '05-26-2026',
     venue: 'TBA',
     location: 'Milwaukee, WI',
     lineup: ['Desperate Electric', 'Modern Haunting'],
@@ -40,7 +40,7 @@ const fa_shows: Show[] = [
 const axa_shows: Show[] = [
   // {
   //   artistSlug: 'adriennexash',
-  //   date: '2024-09-15',
+  //   date: '09-15-2024',
   //   venue: 'The Grand Theater',
   //   location: 'Springfield, IL',
   //   lineup: ['The Headliners', 'Opening Act'],
@@ -52,35 +52,35 @@ const axa_shows: Show[] = [
 const mh_shows: Show[] = [
   {
     artistSlug: 'modern-haunting',
-    date: '2026-03-07',
+    date: '03-07-2026',
     venue: 'At The Tracks',
     location: 'Green Bay, WI',
     isSoldOut: false,
   },
   {
     artistSlug: 'modern-haunting',
-    date: '2026-03-14',
+    date: '03-14-2026',
     venue: 'The Missfits',
     location: 'Appleton, WI',
     isSoldOut: false,
   },
   {
     artistSlug: 'modern-haunting',
-    date: '2026-03-22',
+    date: '03-22-2026',
     venue: "Anodyne Walker's Point",
     location: 'Milwaukee, WI',
     isSoldOut: false,
   },
   {
     artistSlug: 'modern-haunting',
-    date: '2026-04-14',
+    date: '04-14-2026',
     venue: 'At The Tracks',
     location: 'Green Bay, WI',
     isSoldOut: false,
   },
   {
     artistSlug: 'modern-haunting',
-    date: '2026-05-26',
+    date: '05-26-2026',
     venue: 'TBA',
     location: 'Milwaukee, WI',
     lineup: ['Desperate Electric', 'Fairy Astronaut'],
@@ -88,7 +88,7 @@ const mh_shows: Show[] = [
   },
   {
     artistSlug: 'modern-haunting',
-    date: '2026-07-23',
+    date: '07-23-2026',
     venue: 'GBUFO Invasion Fest',
     location: 'Green Bay, WI',
     isSoldOut: false,
