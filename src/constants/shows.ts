@@ -9,23 +9,31 @@ export interface Show {
   eventName?: string
   ticketLink?: string
   eventLink?: string
-  priceInDollars?: number
+  advancePriceInDollars?: number
+  doorPriceInDollars?: number
   isSoldOut: boolean
 }
 
 const fa_shows: Show[] = [
   {
     artistSlug: 'fairy-astronaut',
-    date: '02-22-2026',
-    venue: 'Unknown',
+    date: '02-28-2026',
+    venue: "Linneman's Riverwest Inn",
     location: 'Milwaukee, WI',
     isSoldOut: false,
+    eventLink: 'https://linnemans.com/event/ssaann-w-faded-places-fairy-astronaut-february-28-2026/',
   },
   {
     artistSlug: 'fairy-astronaut',
     date: '03-22-2026',
     venue: "Anodyne Walker's Point",
     location: 'Milwaukee, WI',
+    ticketLink: 'https://tickets.venuepilot.com/e/fairy-astronaut-modern-haunting-luxi-2026-03-22-anodyne-coffee-roasting-co-224-w-bruce-st-milwaukee-9cc07b',
+    eventLink: 'https://anodynecoffee.com/pages/concerts?srsltid=AfmBOop691z_TuMJDFNjWjhiivrgJZk4TIDlNMj0HPjuLmi0phK2bRL8#/events/168983',
+    advancePriceInDollars: 12,
+    doorPriceInDollars: 17,
+    doorsTime: '5:00 PM',
+    startTime: '6:00 PM',
     isSoldOut: false,
   },
   {
@@ -34,6 +42,15 @@ const fa_shows: Show[] = [
     venue: 'TBA',
     location: 'Milwaukee, WI',
     lineup: ['Desperate Electric', 'Modern Haunting'],
+    isSoldOut: false,
+  },
+  {
+    artistSlug: 'fairy-astronaut',
+    date: '07-23-2026',
+    venue: 'GBUFO Museum',
+    eventName: 'GBUFO Invasion Fest',
+    location: 'Green Bay, WI',
+    // lineup: ['Modern Haunting'], // TODO update with lineup once announced
     isSoldOut: false,
   },
 ]
@@ -89,8 +106,10 @@ const mh_shows: Show[] = [
   {
     artistSlug: 'modern-haunting',
     date: '07-23-2026',
-    venue: 'GBUFO Invasion Fest',
+    venue: 'GBUFO Museum',
+    eventName: 'GBUFO Invasion Fest',
     location: 'Green Bay, WI',
+    // lineup: ['Fairy Astronaut'], // TODO update with lineup once announced
     isSoldOut: false,
   },
 ]

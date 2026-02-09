@@ -97,7 +97,7 @@ export const musicians: Musician[] = [
       spotify:
         'https://open.spotify.com/artist/2o2CoR0mS78JbibKCr4q4q?si=DaHX28j-T6OudOHYQkCe4Q',
       instagram: 'https://instagram.com/fairyastronaut',
-      website: 'https://bio.site/fairyastronaut',
+      website: 'https://fairyastronaut.com',
       bandcamp: 'https://fairyastronaut.bandcamp.com',
       soundcloud: 'https://soundcloud.com/fairyastronaut',
       youtube: 'https://youtube.com/@fairyastronaut',
