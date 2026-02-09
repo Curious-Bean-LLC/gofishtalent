@@ -111,6 +111,11 @@ const Tickets: React.FC = () => {
                         {show.lineup.join(', ')}
                       </p>
                     )}
+                    {show.eventName && (
+                      <p className='text-[var(--secondary)] font-semibold'>
+                        {show.eventName}
+                      </p>
+                    )}
                   </div>
 
                   {/* Column 2: Venue and Location - 2 spans */}
@@ -123,7 +128,7 @@ const Tickets: React.FC = () => {
                     </p>
                   </div>
 
-                  {/* Column 3: Date and Event Name - 2 spans */}
+                  {/* Column 3: Date - 2 spans */}
                   <div className='md:col-span-2 space-y-2'>
                     {show.date && (
                       <p className='text-[var(--tertiary)] font-bold text-xl'>
@@ -132,11 +137,6 @@ const Tickets: React.FC = () => {
                           month: 'long',
                           day: 'numeric',
                         })}
-                      </p>
-                    )}
-                    {show.eventName && (
-                      <p className='text-[var(--secondary)] font-semibold'>
-                        {show.eventName}
                       </p>
                     )}
                   </div>
@@ -191,10 +191,10 @@ const Tickets: React.FC = () => {
                           {show.startTime}
                         </p>
                       )}
-                      {show.priceInDollars && (
+                      {show.advancePriceInDollars && (
                         <p className='text-[var(--secondary)] text-sm'>
                           <span className='font-semibold'>Price:</span> $
-                          {show.priceInDollars}
+                          {show.advancePriceInDollars}
                         </p>
                       )}
                       {show.eventLink && (
