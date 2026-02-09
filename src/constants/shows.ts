@@ -39,7 +39,7 @@ const fa_shows: Show[] = [
   {
     artistSlug: 'fairy-astronaut',
     date: '05-26-2026',
-    venue: 'TBA',
+    venue: 'Cactus Club',
     location: 'Milwaukee, WI',
     lineup: ['Desperate Electric', 'Modern Haunting'],
     isSoldOut: false,
@@ -98,7 +98,7 @@ const mh_shows: Show[] = [
   {
     artistSlug: 'modern-haunting',
     date: '05-26-2026',
-    venue: 'TBA',
+    venue: 'Cactus Club',
     location: 'Milwaukee, WI',
     lineup: ['Desperate Electric', 'Fairy Astronaut'],
     isSoldOut: false,
