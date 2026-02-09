@@ -208,6 +208,14 @@ const Tickets: React.FC = () => {
                           View Event Page →
                         </a>
                       )}
+                      {!show.doorsTime &&
+                        !show.startTime &&
+                        !show.advancePriceInDollars &&
+                        !show.eventLink && (
+                          <p className='text-[var(--secondary)] text-sm'>
+                            No more details yet.
+                          </p>
+                        )}
                     </div>
                   </div>
                 )}
