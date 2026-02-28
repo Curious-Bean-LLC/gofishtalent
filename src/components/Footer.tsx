@@ -35,6 +35,12 @@ const Footer = () => {
               Tickets
             </Link>
             <Link
+              to='/tour'
+              className='text-[var(--secondary)] hover:text-[var(--primary)] transition-colors underline decoration-transparent hover:decoration-[var(--primary)]'
+            >
+              Tour
+            </Link>
+            <Link
               to='/about'
               className='text-[var(--secondary)] hover:text-[var(--primary)] transition-colors underline decoration-transparent hover:decoration-[var(--primary)]'
             >

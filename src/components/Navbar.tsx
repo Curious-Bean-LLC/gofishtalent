@@ -82,6 +82,15 @@ const Navbar = () => {
           </li>
           <li className='h-20 flex items-center max-md:w-full max-md:h-16 max-md:border-b max-md:border-[var(--white)]/20'>
             <Link
+              to='/tour'
+              className='text-[var(--white)] no-underline px-4 py-2 h-full flex items-center transition-all duration-300 border-b-4 border-transparent hover:text-[var(--light)] hover:border-[var(--white)] max-md:w-full max-md:py-6 max-md:justify-center max-md:border-b-0 max-md:hover:bg-[#FF9F5C]'
+              onClick={closeMenu}
+            >
+              Tour
+            </Link>
+          </li>
+          <li className='h-20 flex items-center max-md:w-full max-md:h-16 max-md:border-b max-md:border-[var(--white)]/20'>
+            <Link
               to='/about'
               className='text-[var(--white)] no-underline px-4 py-2 h-full flex items-center transition-all duration-300 border-b-4 border-transparent hover:text-[var(--light)] hover:border-[var(--white)] max-md:w-full max-md:py-6 max-md:justify-center max-md:border-b-0 max-md:hover:bg-[#FF9F5C]'
               onClick={closeMenu}
